@@ -135,12 +135,12 @@ fn_start_tmux(){
 		fn_script_log_warn "Unable to detect tmux version"
 	fi
 
-# Console logging disabled
-if [ "${consolelogging}" == "off" ]; then
-	echo "Console logging disabled by user" >> "${consolelog}"
-	fn_script_log_info "Console logging disabled by user"
-fi
-sleep 1
+	# Console logging disabled
+	if [ "${consolelogging}" == "off" ]; then
+		echo "Console logging disabled by user" >> "${consolelog}"
+		fn_script_log_info "Console logging disabled by user"
+	fi
+	sleep 1
 
 	# If the server fails to start
 	check_status.sh
@@ -192,6 +192,8 @@ sleep 1
 	else
 		fn_print_ok "${servername}"
 		fn_script_log_pass "Started ${servername}"
+		alert="start"
+		alert.sh
 	fi
 	rm "${lgsmlogdir}/.${servicename}-tmux-error.tmp"
 	echo -en "\n"
