@@ -23,6 +23,8 @@ elif [ "${gamename}" == "Factorio" ]; then
 	update_factorio.sh
 elif [ "${gamename}" == "Multi Theft Auto" ]; then
 	update_mta.sh
+elif [ "${gamename}" == "ARMA 3" ]; then
+	updateserver.sh
 else
 	update_steamcmd.sh
 fi

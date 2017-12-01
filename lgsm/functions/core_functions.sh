@@ -480,6 +480,11 @@ functionfile="${FUNCNAME}"
 fn_fetch_function
 }
 
+updateserver.sh(){
+functionfile="${FUNCNAME}"
+fn_fetch_function
+}
+
 fn_update_functions.sh(){
 functionfile="${FUNCNAME}"
 fn_fetch_function

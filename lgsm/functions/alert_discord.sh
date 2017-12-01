@@ -7,19 +7,19 @@
 
 json=$(cat <<EOF
 {
-"username":"LinuxGSM",
-"avatar_url":"https://raw.githubusercontent.com/GameServerManagers/LinuxGSM/master/images/logo/lgsm-dark-square-512.png",
+"username":"Arma Server",
+"avatar_url":"https://i.imgur.com/8rrLdon.png",
 "file":"content",
 
 "embeds": [{
 	"color": "2067276",
-	"author": {"name": "${alertemoji} ${alertsubject} ${alertemoji}", "icon_url": "https://raw.githubusercontent.com/GameServerManagers/LinuxGSM/master/images/logo/lgsm-dark-square-512.png"},
+	"author": {"name": "${alertemoji} ${alertsubject} ${alertemoji}"},
 	"title": "",
 	"description": "",
 	"url": "",
 	"type": "content",
-	"thumbnail": {"url": "https://raw.githubusercontent.com/GameServerManagers/LinuxGSM/master/images/logo/lgsm-dark-square-512.png"},
-	"footer": {"text": "LinuxGSM", "icon_url": "https://raw.githubusercontent.com/GameServerManagers/LinuxGSM/master/images/logo/lgsm-dark-square-512.png"},
+	"thumbnail": {"url": "https://i.imgur.com/8rrLdon.png"},
+	"footer": {"text": "LinuxGSM", "icon_url": "https://i.imgur.com/8rrLdon.png"},
 	"fields": [
 			{
 				"name": "Alert Message",
@@ -34,16 +34,8 @@ json=$(cat <<EOF
 				"value": "${servername}"
 			},
 			{
-				"name": "Hostname",
-				"value": "${HOSTNAME}"
-			},
-			{
 				"name": "Server IP",
 				"value": "[${ip}:${port}](https://www.gametracker.com/server_info/${ip}:${port})"
-			},
-			{
-				"name": "More info",
-				"value": "${alerturl}"
 			}
 		]
 	}]
