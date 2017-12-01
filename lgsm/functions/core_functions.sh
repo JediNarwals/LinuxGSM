@@ -450,6 +450,11 @@ functionfile="${FUNCNAME}"
 fn_fetch_function
 }
 
+updateserver.sh(){
+functionfile="${FUNCNAME}"
+fn_fetch_function	
+}
+
 update_ts3.sh(){
 functionfile="${FUNCNAME}"
 fn_fetch_function
