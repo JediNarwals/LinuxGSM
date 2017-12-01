@@ -9,12 +9,6 @@ check.sh
 
 # ==> MODIFY THIS
 
-#What user you want to use (default: anonymous)
-#STEAM_USER=JediNarwals
-
-#If you are not using anonymous, specify a password here.
-#STEAM_PASS=Sn168711
-
 #The default location of the server, relative to this script (default: server).
 #If no directory is specified for the server, it'll fall back on this one.
 #Don't add a trailing /
