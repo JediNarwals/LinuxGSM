@@ -10,10 +10,10 @@ check.sh
 # ==> MODIFY THIS
 
 #What user you want to use (default: anonymous)
-STEAM_USER=JediNarwals
+#STEAM_USER=JediNarwals
 
 #If you are not using anonymous, specify a password here.
-STEAM_PASS=Sn168711
+#STEAM_PASS=Sn168711
 
 #The default location of the server, relative to this script (default: server).
 #If no directory is specified for the server, it'll fall back on this one.
@@ -202,8 +202,8 @@ if [ ! -e "$STEAM_DIR" ]; then
 	(tar -xvzf $STEAMCMD_TARBALL)
 
 	#Install SteamCMD now and try to login, if required
-	if [ "$STEAM_USER" != "anonymous" ]; then
-		$STEAM_DIR/steamcmd.sh +login $STEAM_USER $STEAM_PASS +quit
+	if [ "$steamuser" != "anonymous" ]; then
+		$STEAM_DIR/steamcmd.sh +login $steamuser $steampass +quit
 	else
 		$STEAM_DIR/steamcmd.sh +quit
 	fi
@@ -211,7 +211,7 @@ fi
 
 cd $BASE_DIR
 
-CmdArgs="+login $STEAM_USER $STEAM_PASS"
+CmdArgs="+login $steamuser $steampass"
 ShouldRun=0
 
 add_game(){
