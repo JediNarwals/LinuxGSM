@@ -149,6 +149,7 @@ STEAMCMD_TARBALL="steamcmd_linux.tar.gz"
 #
 
 clear
+echo ""
 echo "================================="
 echo ""
 echo "updateserver.sh"
