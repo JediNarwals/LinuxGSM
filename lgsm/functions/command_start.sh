@@ -192,9 +192,9 @@ fn_start_tmux(){
 	else
 		fn_print_ok "${servername}"
 		fn_script_log_pass "Started ${servername}"
-		alert="start"
-		alert.sh
 	fi
+	alert="start"
+	alert.sh
 	rm "${lgsmlogdir}/.${servicename}-tmux-error.tmp"
 	echo -en "\n"
 }
