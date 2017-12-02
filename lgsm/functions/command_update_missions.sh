@@ -1,8 +1,7 @@
 #!/bin/bash
 # LinuxGSM command_update_linuxgsm.sh function
-# Author: Daniel Gibbs
-# Website: https://gameservermanagers.com
-# Description: Deletes the functions dir to allow re-downloading of functions from GitHub.
+# Author: JediNarwals [TG]
+# Description: Deletes the Mission dir to allow re-downloading of functions from GitHub.
 
 local commandname="UPDATE Missions"
 local commandaction="Update Missions"
@@ -22,9 +21,9 @@ if [ -n "${missionsfile}" ]; then
 		do
 			echo -ne "    checking function ${x}...\c"
 			github_missions_file_url_dir="serverfiles/mpmissions"
-			get_function_file=$(${curlpath} --fail -s "https://raw.githubusercontent.com/${githubmissionsusr}/${githubmissionsrepo}/${githubmissionsbranch}/${githubmissionsfiles}/${$x}")
+			get_function_file=$(${curlpath} --fail -s "https://github.com/${githubmissionsusr}/${githubmissionsrepo}/${githubmissionsbranch}/${githubmissionsfiles}/${$x}")
 			exitcode=$?
-			mission_file_diff=$(diff "${missionsfile}/${functionfile}" <(${curlpath} --fail -s "https://raw.githubusercontent.com/${githubmissionsusr}/${githubmissionsrepo}/${githubmissionsbranch}/${githubmissionsfiles}/${$x}"))
+			mission_file_diff=$(diff "${missionsfile}/${functionfile}" <(${curlpath} --fail -s "https://github.com/${githubmissionsusr}/${githubmissionsrepo}/${githubmissionsbranch}/${githubmissionsfiles}/${$x}"))
 			if [ ${exitcode} -ne 0 ]; then
 				fn_print_fail_eol_nl
 				echo -ne "    removing unknown mission ${$i}...\c"
