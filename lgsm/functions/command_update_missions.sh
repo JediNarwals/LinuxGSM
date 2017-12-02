@@ -18,18 +18,18 @@ echo -ne "\n"
 if [ -n "${missionsfile}" ]; then
 	if [ -d "${missionsfile}" ]; then
 		cd "${missionsfile}"
-		for $i in *
+		for x in *
 		do
-			echo -ne "    checking function ${$i}...\c"
+			echo -ne "    checking function ${x}...\c"
 			github_missions_file_url_dir="serverfiles/mpmissions"
-			get_function_file=$(${curlpath} --fail -s "https://raw.githubusercontent.com/${githubmissionsusr}/${githubmissionsrepo}/${githubmissionsbranch}/${githubmissionsfiles}/${$i}")
+			get_function_file=$(${curlpath} --fail -s "https://raw.githubusercontent.com/${githubmissionsusr}/${githubmissionsrepo}/${githubmissionsbranch}/${githubmissionsfiles}/${$x}")
 			exitcode=$?
-			mission_file_diff=$(diff "${missionsfile}/${functionfile}" <(${curlpath} --fail -s "https://raw.githubusercontent.com/${githubmissionsusr}/${githubmissionsrepo}/${githubmissionsbranch}/${githubmissionsfiles}/${$}"))
+			mission_file_diff=$(diff "${missionsfile}/${functionfile}" <(${curlpath} --fail -s "https://raw.githubusercontent.com/${githubmissionsusr}/${githubmissionsrepo}/${githubmissionsbranch}/${githubmissionsfiles}/${$x}"))
 			if [ ${exitcode} -ne 0 ]; then
 				fn_print_fail_eol_nl
 				echo -ne "    removing unknown mission ${$i}...\c"
 				fn_script_log_fatal "removing unknown mission ${$i}"
-				rm -f "${$i}"
+				rm -f "${$x}"
 				if [ $? -ne 0 ]; then
 					fn_print_fail_eol_nl
 					core_exit.sh
@@ -38,8 +38,8 @@ if [ -n "${missionsfile}" ]; then
 				fi
 			elif [ "${mission_file_diff}" != "" ]; then
 				fn_print_update_eol_nl
-				fn_script_log_info "checking mission ${$i}: UPDATE"
-				rm -rf "${missionsfile}/${$i}"
+				fn_script_log_info "checking mission ${$x}: UPDATE"
+				rm -rf "${missionsfile}/${$x}"
 				fn_update_function
 			else
 				fn_print_ok_eol_nl
