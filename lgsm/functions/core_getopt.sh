@@ -26,6 +26,7 @@ cmd_debug=( "d;debug" "command_debug.sh" "Start server directly in your terminal
 # Update servers only
 cmd_update=( "u;update" "command_update.sh" "Check and apply any server updates." )
 cmd_force_update=( "fu;force-update;update-restart;ur" "forceupdate=1; command_update.sh" "Apply server updates bypassing check." )
+cmd_update_missions=( "um;update-missions" "command_update_mission.sh" "Check and apply any mission updates from Github." )
 # SteamCMD servers only
 cmd_validate=( "v;validate" "command_validate.sh" "Validate server files with SteamCMD." )
 # Server with mods-install
@@ -48,7 +49,7 @@ cmd_dev_detect_deps=( "dd;detect-deps" "command_dev_detect_deps.sh" "Detect requ
 cmd_dev_detect_glibc=( "dg;detect-glibc" "command_dev_detect_glibc.sh" "Detect required glibc." )
 cmd_dev_detect_ldd=( "dl;detect-ldd" "command_dev_detect_ldd.sh" "Detect required dynamic dependencies." )
 # Missionfile update
-cmd_update_missions=( "um;update-missions" "command_update_mission.sh" "Check and apply any mission updates from Github." )
+
 
 ### Set specific opt here ###
 
