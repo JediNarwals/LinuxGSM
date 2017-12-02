@@ -196,8 +196,8 @@ if [ ! -e "$STEAM_DIR" ]; then
 	(tar -xvzf $STEAMCMD_TARBALL)
 
 	#Install SteamCMD now and try to login, if required
-	if [ "$STEAM_USER" != "anonymous" ]; then
-		$STEAM_DIR/steamcmd.sh +login $STEAM_USER $STEAM_PASS +quit
+	if [ "${steamuser}" != "anonymous" ]; then
+		$STEAM_DIR/steamcmd.sh +login ${steamuser} ${steampass} +quit
 	else
 		$STEAM_DIR/steamcmd.sh +quit
 	fi
@@ -205,7 +205,7 @@ fi
 
 cd $BASE_DIR
 
-CmdArgs="+login $STEAM_USER $STEAM_PASS"
+CmdArgs="+login ${steamuser} ${steampass}"
 ShouldRun=0
 
 add_game(){
