@@ -26,7 +26,7 @@ cmd_debug=( "d;debug" "command_debug.sh" "Start server directly in your terminal
 # Update servers only
 cmd_update=( "u;update" "command_update.sh" "Check and apply any server updates." )
 cmd_force_update=( "fu;force-update;update-restart;ur" "forceupdate=1; command_update.sh" "Apply server updates bypassing check." )
-cmd_update_missions=( "um;update-missions" "cd ${serverfiles}; svn resolved ${missionsfile}; svn checkout https://github.com/${githubmissionusr}/${githubmissionsrepo}/${githubmissionsbranch}/${githubmissionsfiles}" "Check and apply any mission updates from Github." )
+cmd_update_missions=( "um;update-missions" "svn resolved ${missionsfile}/.; cd ${serverfiles}; svn checkout https://github.com/${githubmissionusr}/${githubmissionsrepo}/${githubmissionsbranch}/${githubmissionsfiles}" "Check and apply any mission updates from Github." )
 # SteamCMD servers only
 cmd_validate=( "v;validate" "command_validate.sh" "Validate server files with SteamCMD." )
 # Server with mods-install
