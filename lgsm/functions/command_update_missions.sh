@@ -22,9 +22,9 @@ if [ -n "${missionsfile}" ]; then
 		do
 			echo -ne "    checking function ${functionfile}...\c"
 			github_missions_file_url_dir="serverfiles/mpmissions"
-			get_function_file=$(${curlpath} --fail -s "https://raw.githubusercontent.com/${githubmissionsusr}/${githubmissionsrepo}/${githubmissionsbranch}/${githubmissionsfiles}/${functionfile}")
+			get_function_file=$(${curlpath} --fail -s "https://raw.githubusercontent.com/${githubmissionsusr}/${githubmissionsrepo}/${githubmissionsbranch}/${githubmissionsfiles}/.")
 			exitcode=$?
-			mission_file_diff=$(diff "${missionsfile}/${functionfile}" <(${curlpath} --fail -s "https://raw.githubusercontent.com/${githubmissionsusr}/${githubmissionsrepo}/${githubmissionsbranch}/${githubmissionsfiles}/${functionfile}"))
+			mission_file_diff=$(diff "${missionsfile}/${functionfile}" <(${curlpath} --fail -s "https://raw.githubusercontent.com/${githubmissionsusr}/${githubmissionsrepo}/${githubmissionsbranch}/${githubmissionsfiles}/."))
 			if [ ${exitcode} -ne 0 ]; then
 				fn_print_fail_eol_nl
 				echo -ne "    removing unknown mission ${functionfile}...\c"
