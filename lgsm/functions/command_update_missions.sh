@@ -9,7 +9,7 @@ local function_selfname="$(basename "$(readlink -f "${BASH_SOURCE[0]}")")"
 
 fn_print_dots "Updating Missions"
 sleep 1
-check.sh
+#check.sh
 fn_script_log_info "Updating Missions"
 echo -ne "\n"
 
