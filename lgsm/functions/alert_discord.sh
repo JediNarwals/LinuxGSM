@@ -12,7 +12,7 @@ json=$(cat <<EOF
 "file":"content",
 
 "embeds": [{
-	"color": "2067276",
+	"color": "${alertcolor}",
 	"author": {"name": "${alertemoji} ${alertsubject} ${alertemoji}"},
 	"title": "",
 	"description": "",
