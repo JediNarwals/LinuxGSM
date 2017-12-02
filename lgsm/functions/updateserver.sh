@@ -149,6 +149,7 @@ STEAMCMD_TARBALL="steamcmd_linux.tar.gz"
 #
 
 clear
+echo ""
 echo "================================="
 echo ""
 echo "updateserver.sh"
@@ -254,7 +255,7 @@ add_mod(){
 
 		OK=0
 		if [ ! -d "$DIR" ]; then
-		#	echo -e "[ \e[0;91;43m$2\e[0m ] Creating directory $DIR..."
+			#echo -e "[ \e[0;31m$2\e[0m ] Creating directory $DIR..."
 			(mkdir $DIR)
 			if [ ! -d "$DIR" ]; then
 				OK=1
@@ -263,9 +264,16 @@ add_mod(){
 		if [ "$OK" == "0" ]; then
 			CmdArgs="$CmdArgs +force_install_dir \"$DIR\" +workshop_download_item 107410 $MOD validate"
 			ShouldRun=1
-		#	echo -e "[ \e[0;32m$2\e[0m ] Mod Loaded!"
+      exitcode=$?
+      if [ ${exitcode} -ne 0 ]; then
+        echo -e "[ \e[0;31m$2\e[0m ] Mod Not Loaded!"
+        exit 1
+      else
+        echo -e "[ \e[0;32m$2\e[0m ] Mod Loaded!"
+      fi
+			#echo -e "[ \e[0;32m$2\e[0m ] Mod Loaded!"
 		#else
-		#	echo -e "[ \e[0;91;43m$2\e[0m ] Cannot add AppId $MOD into $DIR. Failed to create directory"
+			#echo -e "[ \e[0;91;43m$2\e[0m ] Cannot add AppId $MOD into $DIR. Failed to create directory"
 		fi
 	fi
 }
@@ -350,10 +358,17 @@ DIR_MOD="$2"
 		convmv --lower -r --replace --notest ~/serverfiles/$2/
 		#echo -e "[ \e[0;32m$2\e[0m ] Renamed all the files to lowercase Successfully!"
 		ShouldRun=1
+    exitcode=$?
+    if [ ${exitcode} -ne 0 ]; then
+      echo -e "[ \e[0;31m$2\e[0m ] Failed Terribly"
+      exit 1
+    else
+      echo -e "[ \e[0;32m$2\e[0m ] Completed Successfully"
+    fi
 		#echo "Complete! You moved AppID $MOD into $DIR_MOD successfully."
 	#else
-	#	echo -e "[ \e[0;33m$2\e[0m ] WARNING! Cannot move AppID $MOD into $DIR_MOD. Failed to create directory"
-	#fi
+		#echo -e "[ \e[0;33m$2\e[0m ] WARNING! Cannot move AppID $MOD into $DIR_MOD. Failed to create directory"
+	fi
 fi
 }
 add_move "$DL_MD0" "$DL_NM0"
@@ -402,4 +417,4 @@ echo "###################################"
 echo "###################################"
 echo ""
 
-exit 0
+core_exit.sh
