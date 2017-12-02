@@ -20,11 +20,11 @@ if [ -f ".dev-debug" ]; then
 	set -x
 fi
 
-version="171014"
-shortname="core"
-gameservername="core"
-rootdir="$(dirname "$(readlink -f "${BASH_SOURCE[0]}")")"
-selfname="$(basename "$(readlink -f "${BASH_SOURCE[0]}")")"
+version="170803"
+shortname="﻿arma3"
+gameservername="arma3server"
+rootdir="$(dirname $(readlink -f "${BASH_SOURCE[0]}"))"
+selfname="$(basename $(readlink -f "${BASH_SOURCE[0]}"))"
 servicename="${selfname}"
 lockselfname=".${servicename}.lock"
 lgsmdir="${rootdir}/lgsm"
@@ -32,6 +32,7 @@ logdir="${rootdir}/log"
 lgsmlogdir="${logdir}/lgsm"
 steamcmddir="${rootdir}/steamcmd"
 serverfiles="${rootdir}/serverfiles"
+missionsfile="${rootdir}/serverfiles/mpmissions"
 functionsdir="${lgsmdir}/functions"
 libdir="${lgsmdir}/lib"
 tmpdir="${lgsmdir}/tmp"
@@ -45,6 +46,11 @@ configdirdefault="${lgsmdir}/config-default"
 githubuser="JediNarwals"
 githubrepo="LinuxGSM"
 githubbranch="master"
+
+githubmissionusr="JediNarwals"
+githubmissionsrepo="EF_Missions"
+githubmissionsbranch="trunk"
+githubmissionsfiles="mpmissions"
 
 # Core Function that is required first
 core_functions.sh(){
@@ -337,7 +343,7 @@ else
 			echo -e "\e[0;32mOK\e[0m"
 		fi
 	else
-		function_file_diff=$(diff -q "${configdirdefault}/config-lgsm/${gameservername}/_default.cfg" "${configdirserver}/_default.cfg")
+		function_file_diff=$(diff -q ${configdirdefault}/config-lgsm/${gameservername}/_default.cfg ${configdirserver}/_default.cfg)
 		if [ "${function_file_diff}" != "" ]; then
 			fn_print_warn_nl "_default.cfg has been altered. reloading config."
 			echo -ne "    copying _default.cfg...\c"
