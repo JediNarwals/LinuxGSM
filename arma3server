@@ -43,7 +43,7 @@ configdirdefault="${lgsmdir}/config-default"
 # Allows for the use of different function files
 # from a different repo and/or branch.
 githubuser="JediNarwals"
-githubrepo="LinuxGSM"
+githubrepo="LinuxGSM_Vikingpmc"
 githubbranch="master"
 
 # Core Function that is required first

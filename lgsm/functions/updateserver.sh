@@ -9,6 +9,7 @@ check.sh
 
 # ==> MODIFY THIS
 
+
 #The default location of the server, relative to this script (default: server).
 #If no directory is specified for the server, it'll fall back on this one.
 #Don't add a trailing /
@@ -46,95 +47,88 @@ DL_SV7=
 
 #Ids of the mods you want to install, leave empty to skip
 #First item is the directory, second item is the AppID. Directory is relative to script directory
+#To get the Mod AppID  for the DL_MD# you will need to find the mod on the steamcommunity workshop.
+#In the Web URL you will see a section "/?id=463939057'. This example stims from the Ace mod found here: https://steamcommunity.com/sharedfiles/filedetails/?id=463939057
 DL_NM0="@ace"
 DL_MD0=463939057
 
-DL_NM1="@aceplc"
-DL_MD1=866772689
+DL_NM1="@ace3comptrhsafrf"
+DL_MD1=773131200
 
-DL_NM2="@aceani"
-DL_MD2=766491311
+DL_NM2="@ace3comptrhsusaf"
+DL_MD2=773125288
 
-DL_NM3="@acex"
-DL_MD3=708250744
+DL_NM3="@ace3comptrhsgref"
+DL_MD3=884966711
 
-DL_NM4="@advancedrappelling"
-DL_MD4=713709341
+DL_NM4="@acex"
+DL_MD4=708250744
 
-DL_NM5="@advancedslingloading"
-DL_MD5=615007497
+DL_NM5="@cupterrainscore"
+DL_MD5=583496184
 
-DL_NM6="@advancedtowing"
-DL_MD6=639837898
+DL_NM6="@cupterrainsmaps"
+DL_MD6=583544987
 
-DL_NM7="@advancedurbanrappelling"
-DL_MD7=730310357
+DL_NM7="@rhsafrf"
+DL_MD7=843425103
 
-DL_NM8="@backpackonchest"
-DL_MD8=820924072
+DL_NM8="@rhsusaf"
+DL_MD8=843577117
 
-DL_NM9="@cba_a3"
-DL_MD9=450814997
+DL_NM9="@rhsgref"
+DL_MD9=843593391
 
-DL_NM10="@fa18superhornet"
-DL_MD10=743099837
+DL_NM10="@smarhscompt"
+DL_MD10=1112431110
 
 DL_NM11="@sma"
 DL_MD11=699630614
 
-DL_NM12="@enhancedmovement"
-DL_MD12=333310405
+DL_NM12="@vsmaio"
+DL_MD12=823636749
 
-DL_NM13="@task_force_radio"
-DL_MD13=620019431
+DL_NM13="@acre2"
+DL_MD13=751965892
 
-DL_NM14="@mcc"
-DL_MD14=338988835
+DL_NM14="@task_force_radio"
+DL_MD14=620019431
 
-DL_NM15="@rhsusaf"
-DL_MD15=843577117
+DL_NM15="@projectopfor"
+DL_MD15=735566597
 
-DL_NM16="@rhsafrf"
-DL_MD16=843425103
+DL_NM16="@aresmodachilles"
+DL_MD16=723217262
 
-DL_NM17="@projectopfor"
-DL_MD17=735566597
+DL_NM17="@mcc"
+DL_MD17=338988835
 
 DL_NM18="@shacktacui"
 DL_MD18=498740884
 
-DL_NM19="@cupterrainscore"
-DL_MD19=583496184
+DL_NM19="@enhancedmovement"
+DL_MD19=333310405
 
-DL_NM20="@cupterrainsmaps"
-DL_MD20=583544987
+DL_NM20="@advancedtowing"
+DL_MD20=639837898
 
-DL_NM21="@claclafghan"
-DL_MD21=761349672
+DL_NM21="@backpackonchest"
+DL_MD21=820924072
 
-DL_NM22="@gosalrayak"
-DL_MD22=648172507
+DL_NM22="@chernaruswinter"
+DL_MD22=718590354
 
-DL_NM23="@gosnziwasogo"
-DL_MD23=694603075
+DL_NM23="@gosalrayak"
+DL_MD23=648172507
 
-DL_NM24="@hazarkotvalley"
-DL_MD24=766294759
+DL_NM24="@gosnziwasogo"
+DL_MD24=694603075
 
-DL_NM25="@asrai3"
-DL_MD25=642457233
+DL_NM25="@cba_a3"
+DL_MD25=450814997
 
-DL_NM26="@achilles"
-DL_MD26=723217262
-
-DL_NM27="@vsmaio"
-DL_MD27=823636749
-
-DL_NM28="@acecomptafrf"
-DL_MD28=773131200
-
-DL_NM29="@acecomptusaf"
-DL_MD29=773125288
+DL_NM26="@kunduz"
+DL_MD26=421620913
 
 #Repeat this and the call to add_game at the bottom of this
 #script to add more servers
@@ -149,13 +143,13 @@ STEAMCMD_TARBALL="steamcmd_linux.tar.gz"
 #
 
 clear
-echo ""
 echo "================================="
 echo ""
 echo "updateserver.sh"
 echo "Linux Game Server/Mod updater"
 echo "by JediNarwals"
-echo "Made for EuroForce"
+echo "Made for VikingPMC"
+echo "Sponsored by EuroForce"
 echo "Integrated with LGSM"
 echo ""
 echo "================================="
@@ -417,4 +411,4 @@ echo "###################################"
 echo "###################################"
 echo ""
 
-core_exit.sh
+exit 0
