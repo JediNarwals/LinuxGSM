@@ -49,7 +49,7 @@ githubbranch="master"
 
 githubmissionusr="JediNarwals"
 githubmissionsrepo="EF_Missions"
-githubmissionsbranch="master"
+githubmissionsbranch="trunk"
 githubmissionsfiles="mpmissions"
 
 # Core Function that is required first
