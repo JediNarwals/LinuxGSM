@@ -3,16 +3,16 @@
 # Author: JediNarwals [TG]
 # Description: Deletes the Mission dir to allow re-downloading of functions from GitHub.
 
-local commandname="UPDATE"
-local commandaction="Update"
-local function_selfname="$(basename "$(readlink -f "${BASH_SOURCE[0]}")")"
+#local commandname="UPDATE"
+#local commandaction="Update"
+#local function_selfname="$(basename "$(readlink -f "${BASH_SOURCE[0]}")")"
 
-fn_print_dots "Updating Missions"
-sleep 1
+#fn_print_dots "Updating Missions"
+#sleep 1
 #check.sh
-fn_script_log_info "Updating Missions"
+#fn_script_log_info "Updating Missions"
 svn checkout https://github.com/${githubmissionusr}/${githubmissionsrepo}/trunk/${githubmissionsfiles}
-echo -ne "\n"
+#echo -ne "\n"
 
 # Check and update functions
 #if [ -n "${missionsfile}" ]; then
@@ -50,13 +50,13 @@ echo -ne "\n"
 #	fi
 #fi
 
-if [ "${exitcode}" != "0" ]&&[ -n "${exitcode}" ]; then
-	fn_print_fail "Updating missions"
-	fn_script_log_fatal "Updating missions"
-else
-	fn_print_ok "Updating missions"
-	fn_script_log_pass "Updating missions"
-fi
+#if [ "${exitcode}" != "0" ]&&[ -n "${exitcode}" ]; then
+#	fn_print_fail "Updating missions"
+#	fn_script_log_fatal "Updating missions"
+#else
+#	fn_print_ok "Updating missions"
+#	fn_script_log_pass "Updating missions"
+#fi
 
-echo -ne "\n"
-core_exit.sh
+#echo -ne "\n"
+#core_exit.sh
