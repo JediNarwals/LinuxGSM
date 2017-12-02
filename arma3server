@@ -47,6 +47,9 @@ githubuser="JediNarwals"
 githubrepo="LinuxGSM"
 githubbranch="master"
 
+## GitHub selector for Mission install
+# Allows for missions to be uploaded to a github repo
+# and uploaded to server without access
 githubmissionusr="JediNarwals"
 githubmissionsrepo="EF_Missions"
 githubmissionsbranch="trunk"
