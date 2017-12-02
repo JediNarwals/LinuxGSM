@@ -6,7 +6,7 @@
 
 local commandname="UPDATE Missions"
 local commandaction="Update Missions"
-local function_selfname="$(basename "$(readlink -f "${BASH_SOURCE[$i]}")")"
+local function_selfname="$(basename "$(readlink -f "${BASH_SOURCE[0]}")")"
 
 fn_print_dots "Updating Missions"
 sleep 1
