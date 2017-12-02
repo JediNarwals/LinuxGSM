@@ -3,14 +3,15 @@
 # Author: JediNarwals [TG]
 # Description: Deletes the Mission dir to allow re-downloading of functions from GitHub.
 
-local commandname="UPDATE Missions"
-local commandaction="Update Missions"
+local commandname="UPDATE"
+local commandaction="Update"
 local function_selfname="$(basename "$(readlink -f "${BASH_SOURCE[0]}")")"
 
 fn_print_dots "Updating Missions"
 sleep 1
 #check.sh
 fn_script_log_info "Updating Missions"
+svn checkout https://github.com/${githubmissionusr}/${githubmissionsrepo}/trunk/${githubmissionsfiles}
 echo -ne "\n"
 
 # Check and update functions
@@ -48,8 +49,6 @@ echo -ne "\n"
 		#done
 #	fi
 #fi
-
-svn checkout https://github.com/${githubmissionusr}/${githubmissionsrepo}/trunk/${githubmissionsfiles}
 
 if [ "${exitcode}" != "0" ]&&[ -n "${exitcode}" ]; then
 	fn_print_fail "Updating missions"
