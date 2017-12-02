@@ -50,7 +50,7 @@ githubbranch="master"
 githubmissionusr="JediNarwals"
 githubmissionsrepo="EF_Missions"
 githubmissionsbranch="master"
-githubmissionsfiles="Completed"
+githubmissionsfiles="mpmissions"
 
 # Core Function that is required first
 core_functions.sh(){
