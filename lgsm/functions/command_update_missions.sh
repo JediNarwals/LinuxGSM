@@ -55,5 +55,6 @@ else
 	fn_print_ok "Updating missions"
 	fn_script_log_pass "Updating missions"
 fi
+
 echo -ne "\n"
 core_exit.sh
