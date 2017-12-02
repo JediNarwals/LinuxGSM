@@ -41,34 +41,34 @@ if [ -z "${legacymode}" ];then
 		fn_print_ok_eol_nl
 	fi
 
-	#echo -ne "    checking ${selfname}...\c"
-	#script_diff=$(diff <(sed '/shortname/d;/gameservername/d;/gamename/d' "${tmpdir}/linuxgsm.sh") <(sed '/shortname/d;/gameservername/d;/gamename/d' "${rootdir}/${selfname}"))
-	#if [ "${script_diff}" != "" ]; then
-	#	fn_print_update_eol_nl
-	#	echo -ne "    backup ${selfname}...\c"
-	#	mkdir -p "${backupdir}/script/"
-	#	cp "${rootdir}/${selfname}" "${backupdir}/script/${selfname}-$(date +"%m_%d_%Y_%M").bak"
-	#	if [ $? -ne 0 ]; then
-	#		fn_print_fail_eol_nl
-	#		core_exit.sh
-	#	else
-	#		fn_print_ok_eol_nl
-	#		echo -e "	Backup: ${backupdir}/script/${selfname}-$(date +"%m_%d_%Y_%M").bak"
-	#	fi
-	#	echo -ne "    fetching ${selfname}...\c"
-	#	cp "${tmpdir}/linuxgsm.sh" "${rootdir}/${selfname}"
-	#	sed -i "s/shortname=\"core\"/shortname=\"${shortname}\"/g" "${rootdir}/${selfname}"
-	#	sed -i "s/gameservername=\"core\"/gameservername=\"${gameservername}\"/g" "${rootdir}/${selfname}"
-	#	sed -i "s/gamename=\"core\"/gamename=\"${gamename}\"/g" "${rootdir}/${selfname}"
-	#	if [ $? -ne 0 ]; then
-	#		fn_print_fail_eol_nl
-	#		core_exit.sh
-	#	else
-	#		fn_print_ok_eol_nl
-	#	fi
-	#else
-	#	fn_print_ok_eol_nl
-	#fi
+	echo -ne "    checking ${selfname}...\c"
+	script_diff=$(diff <(sed '/shortname/d;/gameservername/d;/gamename/d' "${tmpdir}/linuxgsm.sh") <(sed '/shortname/d;/gameservername/d;/gamename/d' "${rootdir}/${selfname}"))
+	if [ "${script_diff}" != "" ]; then
+		fn_print_update_eol_nl
+		echo -ne "    backup ${selfname}...\c"
+		mkdir -p "${backupdir}/script/"
+		cp "${rootdir}/${selfname}" "${backupdir}/script/${selfname}-$(date +"%m_%d_%Y_%M").bak"
+		if [ $? -ne 0 ]; then
+			fn_print_fail_eol_nl
+			core_exit.sh
+		else
+			fn_print_ok_eol_nl
+			echo -e "	Backup: ${backupdir}/script/${selfname}-$(date +"%m_%d_%Y_%M").bak"
+		fi
+		echo -ne "    fetching ${selfname}...\c"
+		cp "${tmpdir}/linuxgsm.sh" "${rootdir}/${selfname}"
+		sed -i "s/shortname=\"core\"/shortname=\"${shortname}\"/g" "${rootdir}/${selfname}"
+		sed -i "s/gameservername=\"core\"/gameservername=\"${gameservername}\"/g" "${rootdir}/${selfname}"
+		sed -i "s/gamename=\"core\"/gamename=\"${gamename}\"/g" "${rootdir}/${selfname}"
+		if [ $? -ne 0 ]; then
+			fn_print_fail_eol_nl
+			core_exit.sh
+		else
+			fn_print_ok_eol_nl
+		fi
+	else
+		fn_print_ok_eol_nl
+	fi
 fi
 
 # Check and update functions
