@@ -33,6 +33,7 @@ fn_alert_test(){
 	alertsound="1"
 	alerturl="not enabled"
 	alertbody="Testing LinuxGSM Alert. No action to be taken."
+	alertcolor="12745742"
 }
 
 fn_alert_restart(){
@@ -42,6 +43,7 @@ fn_alert_restart(){
 	alertsound="2"
 	alerturl="not enabled"
 	alertbody="${servicename} not running"
+	alertcolor="10038562"
 }
 
 fn_alert_restart_query(){
@@ -51,6 +53,7 @@ fn_alert_restart_query(){
 	alertsound="2"
 	alerturl="not enabled"
 	alertbody="gsquery.py failed to query: ${gsquerycmd}"
+	alertcolor="10038562"
 }
 
 fn_alert_stop(){
@@ -60,6 +63,7 @@ fn_alert_stop(){
 	alertsound="2"
 	alerturl="not enabled"
 	alertbody="${servicename} was stopped"
+	alertcolor="10038562"
 }
 
 fn_alert_start(){
@@ -69,6 +73,7 @@ fn_alert_start(){
 	alertsound="1"
 	alerturl="not enabled"
 	alertbody="${servicename} was started"
+	alertcolor="2067276"
 }
 
 fn_alert_update(){
@@ -78,6 +83,7 @@ fn_alert_update(){
 	alertsound="1"
 	alerturl="not enabled"
 	alertbody="${gamename} received update"
+	alertcolor="11027200"
 }
 
 fn_alert_permissions(){
@@ -87,6 +93,7 @@ fn_alert_permissions(){
 	alertsound="2"
 	alerturl="not enabled"
 	alertbody="${servicename} has permissions issues"
+	alertcolor="10038562"
 }
 
 if [ "${alert}" == "permissions" ]; then
