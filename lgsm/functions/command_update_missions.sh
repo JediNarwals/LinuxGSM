@@ -11,7 +11,8 @@
 #sleep 1
 #check.sh
 #fn_script_log_info "Updating Missions"
-svn checkout https://github.com/${githubmissionusr}/${githubmissionsrepo}/trunk/${githubmissionsfiles}
+cd "${serverfiles}"
+svn checkout https://github.com/JediNarwals/EF_Missions/trunk/mpmissions
 #echo -ne "\n"
 
 # Check and update functions
