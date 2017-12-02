@@ -46,95 +46,95 @@ DL_SV7=
 
 #Ids of the mods you want to install, leave empty to skip
 #First item is the directory, second item is the AppID. Directory is relative to script directory
-DL_NM0="@ace"
-DL_MD0=463939057
+DL_NM0=
+DL_MD0=
 
-DL_NM1="@aceplc"
-DL_MD1=866772689
+DL_NM1=
+DL_MD1=
 
-DL_NM2="@aceani"
-DL_MD2=766491311
+DL_NM2=
+DL_MD2=
 
-DL_NM3="@acex"
-DL_MD3=708250744
+DL_NM3=
+DL_MD3=
 
-DL_NM4="@advancedrappelling"
-DL_MD4=713709341
+DL_NM4=
+DL_MD4=
 
-DL_NM5="@advancedslingloading"
-DL_MD5=615007497
+DL_NM5=
+DL_MD5=
 
-DL_NM6="@advancedtowing"
-DL_MD6=639837898
+DL_NM6=
+DL_MD6=
 
-DL_NM7="@advancedurbanrappelling"
-DL_MD7=730310357
+DL_NM7=
+DL_MD7=
 
-DL_NM8="@backpackonchest"
-DL_MD8=820924072
+DL_NM8=
+DL_MD8=
 
-DL_NM9="@cba_a3"
-DL_MD9=450814997
+DL_NM9=
+DL_MD9=
 
-DL_NM10="@fa18superhornet"
-DL_MD10=743099837
+DL_NM10=
+DL_MD10=
 
-DL_NM11="@sma"
-DL_MD11=699630614
+DL_NM11=
+DL_MD11=
 
-DL_NM12="@enhancedmovement"
-DL_MD12=333310405
+DL_NM12=
+DL_MD12=
 
-DL_NM13="@task_force_radio"
-DL_MD13=620019431
+DL_NM13=
+DL_MD13=
 
-DL_NM14="@mcc"
-DL_MD14=338988835
+DL_NM14=
+DL_MD14=
 
-DL_NM15="@rhsusaf"
-DL_MD15=843577117
+DL_NM15=
+DL_MD15=
 
-DL_NM16="@rhsafrf"
-DL_MD16=843425103
+DL_NM16=
+DL_MD16=
 
-DL_NM17="@projectopfor"
-DL_MD17=735566597
+DL_NM17=
+DL_MD17=
 
-DL_NM18="@shacktacui"
-DL_MD18=498740884
+DL_NM18=
+DL_MD18=
 
-DL_NM19="@cupterrainscore"
-DL_MD19=583496184
+DL_NM19=
+DL_MD19=
 
-DL_NM20="@cupterrainsmaps"
-DL_MD20=583544987
+DL_NM20=
+DL_MD20=
 
-DL_NM21="@claclafghan"
-DL_MD21=761349672
+DL_NM21=
+DL_MD21=
 
-DL_NM22="@gosalrayak"
-DL_MD22=648172507
+DL_NM22=
+DL_MD22=
 
-DL_NM23="@gosnziwasogo"
-DL_MD23=694603075
+DL_NM23=
+DL_MD23=
 
-DL_NM24="@hazarkotvalley"
-DL_MD24=766294759
+DL_NM24=
+DL_MD24=
 
-DL_NM25="@asrai3"
-DL_MD25=642457233
+DL_NM25=
+DL_MD25=
 
-DL_NM26="@achilles"
-DL_MD26=723217262
+DL_NM26=
+DL_MD26=
 
-DL_NM27="@vsmaio"
-DL_MD27=823636749
+DL_NM27=
+DL_MD27=
 
-DL_NM28="@acecomptafrf"
-DL_MD28=773131200
+DL_NM28=
+DL_MD28=
 
-DL_NM29="@acecomptusaf"
-DL_MD29=773125288
+DL_NM29=
+DL_MD29=
 
 #Repeat this and the call to add_game at the bottom of this
 #script to add more servers
@@ -149,7 +149,6 @@ STEAMCMD_TARBALL="steamcmd_linux.tar.gz"
 #
 
 clear
-echo ""
 echo "================================="
 echo ""
 echo "updateserver.sh"
@@ -197,8 +196,8 @@ if [ ! -e "$STEAM_DIR" ]; then
 	(tar -xvzf $STEAMCMD_TARBALL)
 
 	#Install SteamCMD now and try to login, if required
-	if [ "${steamuser}" != "anonymous" ]; then
-		$STEAM_DIR/steamcmd.sh +login ${steamuser} ${steampass} +quit
+	if [ "$STEAM_USER" != "anonymous" ]; then
+		$STEAM_DIR/steamcmd.sh +login $STEAM_USER $STEAM_PASS +quit
 	else
 		$STEAM_DIR/steamcmd.sh +quit
 	fi
@@ -206,7 +205,7 @@ fi
 
 cd $BASE_DIR
 
-CmdArgs="+login ${steamuser} ${steampass}"
+CmdArgs="+login $STEAM_USER $STEAM_PASS"
 ShouldRun=0
 
 add_game(){
@@ -255,7 +254,7 @@ add_mod(){
 
 		OK=0
 		if [ ! -d "$DIR" ]; then
-			#echo -e "[ \e[0;31m$2\e[0m ] Creating directory $DIR..."
+		#	echo -e "[ \e[0;91;43m$2\e[0m ] Creating directory $DIR..."
 			(mkdir $DIR)
 			if [ ! -d "$DIR" ]; then
 				OK=1
@@ -264,16 +263,9 @@ add_mod(){
 		if [ "$OK" == "0" ]; then
 			CmdArgs="$CmdArgs +force_install_dir \"$DIR\" +workshop_download_item 107410 $MOD validate"
 			ShouldRun=1
-      exitcode=$?
-      if [ ${exitcode} -ne 0 ]; then
-        echo -e "[ \e[0;31m$2\e[0m ] Mod Not Loaded!"
-        exit 1
-      else
-        echo -e "[ \e[0;32m$2\e[0m ] Mod Loaded!"
-      fi
-			#echo -e "[ \e[0;32m$2\e[0m ] Mod Loaded!"
+		#	echo -e "[ \e[0;32m$2\e[0m ] Mod Loaded!"
 		#else
-			#echo -e "[ \e[0;91;43m$2\e[0m ] Cannot add AppId $MOD into $DIR. Failed to create directory"
+		#	echo -e "[ \e[0;91;43m$2\e[0m ] Cannot add AppId $MOD into $DIR. Failed to create directory"
 		fi
 	fi
 }
@@ -358,17 +350,10 @@ DIR_MOD="$2"
 		convmv --lower -r --replace --notest ~/serverfiles/$2/
 		#echo -e "[ \e[0;32m$2\e[0m ] Renamed all the files to lowercase Successfully!"
 		ShouldRun=1
-    exitcode=$?
-    if [ ${exitcode} -ne 0 ]; then
-      echo -e "[ \e[0;31m$2\e[0m ] Failed Terribly"
-      exit 1
-    else
-      echo -e "[ \e[0;32m$2\e[0m ] Completed Successfully"
-    fi
 		#echo "Complete! You moved AppID $MOD into $DIR_MOD successfully."
 	#else
-		#echo -e "[ \e[0;33m$2\e[0m ] WARNING! Cannot move AppID $MOD into $DIR_MOD. Failed to create directory"
-	fi
+	#	echo -e "[ \e[0;33m$2\e[0m ] WARNING! Cannot move AppID $MOD into $DIR_MOD. Failed to create directory"
+	#fi
 fi
 }
 add_move "$DL_MD0" "$DL_NM0"
@@ -417,4 +402,4 @@ echo "###################################"
 echo "###################################"
 echo ""
 
-core_exit.sh
+exit 0
