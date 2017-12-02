@@ -59,7 +59,7 @@ currentopt+=( "${cmd_update_linuxgsm[@]}" )
 
 # Exclude noupdate games here
 if [ "${gamename}" != "Battlefield: 1942" ]&&[ "${engine}" != "quake" ]&&[ "${engine}" != "idtech2" ]&&[ "${engine}" != "idtech3" ]&&[ "${engine}" != "iw2.0" ]&&[ "${engine}" != "iw3.0" ]&&[ "${gamename}" != "San Andreas Multiplayer" ]; then
-	currentopt+=( "${cmd_update[@]}" )
+	currentopt+=( "${cmd_update[@]}" "${cmd_update_missions[@]}" )
 	# force update for SteamCMD only or MTA
 	if [ -n "${appid}" ] || [ "${gamename}" == "Multi Theft Auto" ]; then
 		currentopt+=( "${cmd_force_update[@]}" )
@@ -80,7 +80,7 @@ if [ "${gamename}" != "TeamSpeak 3" ]; then
 fi
 
 # Update missions from Github
-currentopt+=( "${cmd_update_missions[@]}" )
+#currentopt+=( "${cmd_update_missions[@]}" )
 
 ## Game server exclusive commands
 
