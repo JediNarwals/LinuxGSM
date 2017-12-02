@@ -41,7 +41,7 @@ fn_alert_restart(){
 	alertemoji="🚨"
 	alertsound="2"
 	alerturl="not enabled"
-	alertbody="${servicename} ${executable} not running"
+	alertbody="${servicename} not running"
 }
 
 fn_alert_restart_query(){
@@ -51,6 +51,24 @@ fn_alert_restart_query(){
 	alertsound="2"
 	alerturl="not enabled"
 	alertbody="gsquery.py failed to query: ${gsquerycmd}"
+}
+
+fn_alert_stop(){
+	fn_script_log_info "Sending alert: Stopped: ${executable} was stopped"
+	alertsubject="Alert - ${servicename} - Stopped"
+	alertemoji="🚨"
+	alertsound="2"
+	alerturl="not enabled"
+	alertbody="${servicename} was stopped"
+}
+
+fn_alert_start(){
+	fn_script_log_info "Sending alert: started: ${executable} was started"
+	alertsubject="Alert - ${servicename} - started"
+	alertemoji="❗"
+	alertsound="1"
+	alerturl="not enabled"
+	alertbody="${servicename} was started"
 }
 
 fn_alert_update(){
@@ -77,6 +95,10 @@ elif [ "${alert}" == "restart" ]; then
 	fn_alert_restart
 elif [ "${alert}" == "restartquery" ]; then
 	fn_alert_restart_query
+elif [ "${alert}" == "stop" ]; then
+	fn_alert_stop
+elif [ "${alert}" == "start" ]; then
+	fn_alert_start
 elif [ "${alert}" == "test" ]; then
 	fn_alert_test
 elif [ "${alert}" == "update" ]; then
