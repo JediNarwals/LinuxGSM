@@ -445,6 +445,11 @@ functionfile="${FUNCNAME}"
 fn_fetch_function
 }
 
+command_update_missions.sh(){
+fnctionfile="${FUNCNAME}"
+fn_fetch_function
+}
+
 command_update.sh(){
 functionfile="${FUNCNAME}"
 fn_fetch_function
@@ -452,7 +457,7 @@ fn_fetch_function
 
 updateserver.sh(){
 functionfile="${FUNCNAME}"
-fn_fetch_function	
+fn_fetch_function
 }
 
 update_ts3.sh(){

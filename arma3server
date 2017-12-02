@@ -32,6 +32,7 @@ logdir="${rootdir}/log"
 lgsmlogdir="${logdir}/lgsm"
 steamcmddir="${rootdir}/steamcmd"
 serverfiles="${rootdir}/serverfiles"
+missionsfile="${rootdir}/serverfiles/mpmissions"
 functionsdir="${lgsmdir}/functions"
 libdir="${lgsmdir}/lib"
 tmpdir="${lgsmdir}/tmp"
@@ -45,6 +46,11 @@ configdirdefault="${lgsmdir}/config-default"
 githubuser="JediNarwals"
 githubrepo="LinuxGSM"
 githubbranch="master"
+
+githubmissionusr="JediNarwals"
+githubmissionsrepo="EF_Missions"
+githubmissionsbranch="master"
+githubmissionsfiles="Completed"
 
 # Core Function that is required first
 core_functions.sh(){

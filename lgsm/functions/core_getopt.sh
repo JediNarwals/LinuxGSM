@@ -47,6 +47,8 @@ cmd_dev_debug=( "dev;developer" "command_dev_debug.sh" "Enable developer Mode." 
 cmd_dev_detect_deps=( "dd;detect-deps" "command_dev_detect_deps.sh" "Detect required dependencies." )
 cmd_dev_detect_glibc=( "dg;detect-glibc" "command_dev_detect_glibc.sh" "Detect required glibc." )
 cmd_dev_detect_ldd=( "dl;detect-ldd" "command_dev_detect_ldd.sh" "Detect required dynamic dependencies." )
+# Missionfile update
+cmd_update_missions=( "um;update-missions" "command_update_mission.sh" "Check and apply any mission updates from Github." )
 
 ### Set specific opt here ###
 
@@ -76,6 +78,9 @@ currentopt+=( "${cmd_backup[@]}" )
 if [ "${gamename}" != "TeamSpeak 3" ]; then
 	currentopt+=( "${cmd_console[@]}" "${cmd_debug[@]}" )
 fi
+
+# Update missions from Github
+currentopt+=( "${cmd_update_missions[@]}" )
 
 ## Game server exclusive commands
 
