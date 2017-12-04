@@ -82,7 +82,7 @@ fn_alert_update(){
 	alertemoji="🎮"
 	alertsound="1"
 	alerturl="not enabled"
-	alertbody="${gamename} received update"
+	alertbody="${gamename} received an update"
 	alertcolor="11027200"
 }
 
