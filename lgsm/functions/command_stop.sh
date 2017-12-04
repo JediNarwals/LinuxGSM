@@ -281,7 +281,6 @@ fn_stop_tmux(){
 	if [ "${bypass}" == "0" ] then
 		alert="stop"
 		alert.sh
-	fi
 }
 
 # checks if the server is already stopped before trying to stop.
