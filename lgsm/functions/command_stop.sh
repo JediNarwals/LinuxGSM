@@ -282,6 +282,7 @@ fn_stop_tmux(){
 		alert="stop"
 		alert.sh
 	fi
+	
 }
 
 # checks if the server is already stopped before trying to stop.
