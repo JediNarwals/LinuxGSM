@@ -396,10 +396,9 @@ add_move "$DL_MD29" "$DL_NM29"
 
 echo ""
 #This starts the server after the process has Downloaded and moved all the mods.
-bypass="1"
+
 ./arma3server start
-alert="update"
-alert.sh
+
 
 echo ""
 echo ""
@@ -412,4 +411,7 @@ echo "###################################"
 echo "###################################"
 echo ""
 
-exit 0
+alert="update"
+alert.sh
+
+core_exit.sh
