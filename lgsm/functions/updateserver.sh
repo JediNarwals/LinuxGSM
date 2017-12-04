@@ -239,8 +239,6 @@ add_game(){
 			echo -e "[ \e[0;91;43m$3\e[0m ] Cannot add AppId $GAME into $DIR. Failed to create directory"
 		fi
 	fi
-	alert="update"
-	alert.sh
 }
 
 add_game "$DL_SV0" "$DL_DIR0" "$DL_GNM0"
@@ -408,6 +406,9 @@ echo ""
 #This starts the server after the process has Downloaded and moved all the mods.
 bypass="1"
 ./arma3server start
+
+alert="update"
+alert.sh
 
 echo ""
 echo ""
