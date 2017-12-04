@@ -193,14 +193,14 @@ fn_start_tmux(){
 		fn_print_ok "${servername}"
 		fn_script_log_pass "Started ${servername}"
 	fi
-	if [ -z "${bypass}" ]; then
+	rm "${lgsmlogdir}/.${servicename}-tmux-error.tmp"
+	echo -en "\n"
+	if [ -n "${bypass}" ]; then
 		alert="start"
 		alert.sh
 	else
 		core_exit.sh
 	fi
-	rm "${lgsmlogdir}/.${servicename}-tmux-error.tmp"
-	echo -en "\n"
 }
 
 fn_print_dots "${servername}"
