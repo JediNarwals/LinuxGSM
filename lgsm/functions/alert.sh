@@ -37,12 +37,12 @@ fn_alert_test(){
 }
 
 fn_alert_restart(){
-	fn_script_log_info "Sending alert: Restarted: ${executable} not running"
+	fn_script_log_info "Sending alert: Restarted: ${executable}"
 	alertsubject="Alert - ${servicename} - Restarted"
 	alertemoji="🚨"
 	alertsound="2"
 	alerturl="not enabled"
-	alertbody="${servicename} not running"
+	alertbody="${servicename} was restarted"
 	alertcolor="10038562"
 }
 
@@ -86,6 +86,16 @@ fn_alert_update(){
 	alertcolor="11027200"
 }
 
+fn_alert_monitor(){
+	fn_script_log_info "Sending alert: Monitor Failed: ${executable} failed a monitor check"
+	alertsubject="Alert - ${servicename} - failed monitor check"
+	alertemoji="🚨"
+	alertsound="2"
+	alerturl="not enabled"
+	alertbody="${servicename} failed monitor check and will be restarted"
+	alertcolor="10038562"
+}
+
 fn_alert_permissions(){
 	fn_script_log_info "Sending alert: Permissions error"
 	alertsubject="Alert - ${servicename}: Permissions error"
@@ -100,6 +110,8 @@ if [ "${alert}" == "permissions" ]; then
 	fn_alert_permissions
 elif [ "${alert}" == "restart" ]; then
 	fn_alert_restart
+elif [ "${alert}" == "monitor" ]; then
+	fn_alert_monitor
 elif [ "${alert}" == "restartquery" ]; then
 	fn_alert_restart_query
 elif [ "${alert}" == "stop" ]; then
