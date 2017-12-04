@@ -14,6 +14,7 @@ check.sh
 fn_script_log_info "Updating LinuxGSM"
 echo -ne "\n"
 
+
 if [ -z "${legacymode}" ];then
 	# Check and update _default.cfg
 	echo -ne "    checking config _default.cfg...\c"
