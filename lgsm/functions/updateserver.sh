@@ -163,8 +163,7 @@ echo "================================="
 echo ""
 
 #This will stop the server in preperation of the validation process.
-bypass="on"
-command_stop.sh
+./arma3server stop
 
 #Get the current directory (snippet from SourceCMD's sourcecmd.sh)
 BASE_DIR="$(cd "${0%/*}" && echo $PWD)"
