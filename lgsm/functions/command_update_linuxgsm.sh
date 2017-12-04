@@ -4,8 +4,8 @@
 # Website: https://gameservermanagers.com
 # Description: Deletes the functions dir to allow re-downloading of functions from GitHub.
 
-local commandname="UPDATE LinuxGSM"
-local commandaction="Update LinuxGSM"
+local commandname="UPDATE function"
+local commandaction="Update function"
 local function_selfname="$(basename "$(readlink -f "${BASH_SOURCE[0]}")")"
 
 fn_print_dots "Updating LinuxGSM"
@@ -77,29 +77,29 @@ if [ -n "${functionsdir}" ]; then
 		cd "${functionsdir}"
 		for functionfile in *
 		do
-			fn_print_dots_fn
+			fn_print_dots "${functionfile}"
 			github_file_url_dir="lgsm/functions"
 			get_function_file=$(${curlpath} --fail -s "https://raw.githubusercontent.com/${githubuser}/${githubrepo}/${githubbranch}/${github_file_url_dir}/${functionfile}")
 			exitcode=$?
 			function_file_diff=$(diff "${functionsdir}/${functionfile}" <(${curlpath} --fail -s "https://raw.githubusercontent.com/${githubuser}/${githubrepo}/${githubbranch}/${github_file_url_dir}/${functionfile}"))
 			if [ ${exitcode} -ne 0 ]; then
-				fn_print_fail_fn_nl
+				fn_print_fail_nl "${functionfile}"
 				echo -ne "    removing unknown function ${functionfile}...\c"
 				fn_script_log_fatal "removing unknown function ${functionfile}"
 				rm -f "${functionfile}"
 				if [ $? -ne 0 ]; then
-					fn_print_fail_fn_nl
+					fn_print_fail_nl "${functionfile}"
 					core_exit.sh
 				else
 					fn_print_ok_fn_nl
 				fi
 			elif [ "${function_file_diff}" != "" ]; then
-				fn_print_update_fn_nl
+				fn_print_update_nl "${functionfile}"
 				fn_script_log_info "checking function ${functionfile}: UPDATE"
 				rm -rf "${functionsdir}/${functionfile}"
 				fn_update_function
 			else
-				fn_print_ok_fn_nl
+				fn_print_ok_nl "${functionfile}"
 			fi
 		done
 	fi
