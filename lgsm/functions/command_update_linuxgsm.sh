@@ -78,6 +78,7 @@ if [ -n "${functionsdir}" ]; then
 		for functionfile in *
 		do
 			echo -ne "    checking function ${functionfile}...\c"
+			fn_print_checking_eol_nl
 			github_file_url_dir="lgsm/functions"
 			get_function_file=$(${curlpath} --fail -s "https://raw.githubusercontent.com/${githubuser}/${githubrepo}/${githubbranch}/${github_file_url_dir}/${functionfile}")
 			exitcode=$?
@@ -85,6 +86,7 @@ if [ -n "${functionsdir}" ]; then
 			if [ ${exitcode} -ne 0 ]; then
 				fn_print_fail_eol_nl
 				echo -ne "    removing unknown function ${functionfile}...\c"
+				fn_print_checking_eol_nl
 				fn_script_log_fatal "removing unknown function ${functionfile}"
 				rm -f "${functionfile}"
 				if [ $? -ne 0 ]; then
