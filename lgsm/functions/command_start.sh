@@ -198,6 +198,7 @@ fn_start_tmux(){
 	if [ "${bypass}" == "0" ] then
 		alert="start"
 		alert.sh
+	fi
 }
 
 fn_print_dots "${servername}"
