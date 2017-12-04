@@ -28,31 +28,31 @@ if [ -z "${legacymode}" ];then
 	#	fn_script_log_info "checking config _default.cfg: OK"
 	#fi
 
-	echo -ne "    checking linuxgsm.sh...\c"
+	fn_print_dots "linuxgsm.sh..."
 	tmp_script_diff=$(diff "${tmpdir}/linuxgsm.sh" <(${curlpath} -s "https://raw.githubusercontent.com/${githubuser}/${githubrepo}/${githubbranch}/linuxgsm.sh"))
 	if [ "${tmp_script_diff}" != "" ]; then
-		fn_print_update_eol_nl
+		fn_print_update_fn_nl "linuxgsm.sh"
 		fn_script_log_info "checking linuxgsm.sh: UPDATE"
 		rm -f "${tmpdir}/linuxgsm.sh"
 		fn_fetch_file_github "" "linuxgsm.sh" "${tmpdir}" "nochmodx" "norun" "noforcedl" "nomd5"
 		# Compare selfname against linuxgsm.sh in the tmp dir. Ignoring server specific vars.
 	else
 		fn_script_log_info "checking linuxgsm.sh: OK"
-		fn_print_ok_eol_nl
+		fn_print_ok_nl "linuxgsm.sh"
 	fi
 
-	echo -ne "    checking ${selfname}...\c"
+	fn_print_dots "${selfname}..."
 	script_diff=$(diff <(sed '/shortname/d;/gameservername/d;/gamename/d' "${tmpdir}/linuxgsm.sh") <(sed '/shortname/d;/gameservername/d;/gamename/d' "${rootdir}/${selfname}"))
 	if [ "${script_diff}" != "" ]; then
-		fn_print_update_eol_nl
+		fn_print_update_fn_nl "${selfname}"
 		echo -ne "    backup ${selfname}...\c"
 		mkdir -p "${backupdir}/script/"
 		cp "${rootdir}/${selfname}" "${backupdir}/script/${selfname}-$(date +"%m_%d_%Y_%M").bak"
 		if [ $? -ne 0 ]; then
-			fn_print_fail_eol_nl
+			fn_print_fail_nl "${selfname}"
 			core_exit.sh
 		else
-			fn_print_ok_eol_nl
+			fn_print_ok_nl "${selfname}"
 			echo -e "	Backup: ${backupdir}/script/${selfname}-$(date +"%m_%d_%Y_%M").bak"
 		fi
 		echo -ne "    fetching ${selfname}...\c"
@@ -61,13 +61,13 @@ if [ -z "${legacymode}" ];then
 		sed -i "s/gameservername=\"core\"/gameservername=\"${gameservername}\"/g" "${rootdir}/${selfname}"
 		sed -i "s/gamename=\"core\"/gamename=\"${gamename}\"/g" "${rootdir}/${selfname}"
 		if [ $? -ne 0 ]; then
-			fn_print_fail_eol_nl
+			fn_print_fail_nl "${selfname}"
 			core_exit.sh
 		else
-			fn_print_ok_eol_nl
+			fn_print_ok_nl "${selfname}"
 		fi
 	else
-		fn_print_ok_eol_nl
+		fn_print_ok_nl "${selfname}"
 	fi
 fi
 
