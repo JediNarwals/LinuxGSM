@@ -198,8 +198,6 @@ fn_start_tmux(){
 	if [ "${bypass}" != "on" ]; then
 		alert="start"
 		alert.sh
-	else
-		core_exit.sh
 	fi
 }
 

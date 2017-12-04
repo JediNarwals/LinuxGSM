@@ -281,8 +281,6 @@ fn_stop_tmux(){
 	if [ "${bypass}" != "on" ]; then
 		alert="stop"
 		alert.sh
-	else
-		core_exit.sh
 	fi
 }
 
