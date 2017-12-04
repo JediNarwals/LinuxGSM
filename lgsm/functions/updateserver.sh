@@ -406,7 +406,6 @@ echo ""
 ./arma3server start
 
 echo ""
-echo ""
 echo "###################################"
 echo "###################################"
 echo "###   All mods/server updated   ###"
