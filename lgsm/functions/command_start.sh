@@ -195,10 +195,6 @@ fn_start_tmux(){
 	fi
 	rm "${lgsmlogdir}/.${servicename}-tmux-error.tmp"
 	echo -en "\n"
-	if [ "${bypass}" == "1" ]; then
-		alert="start"
-		alert.sh
-	fi
 }
 
 fn_print_dots "${servername}"

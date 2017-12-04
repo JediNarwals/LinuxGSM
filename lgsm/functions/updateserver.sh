@@ -163,7 +163,6 @@ echo "================================="
 echo ""
 
 #This will stop the server in preperation of the validation process.
-bypass=1
 ./arma3server stop
 
 #Get the current directory (snippet from SourceCMD's sourcecmd.sh)
@@ -404,7 +403,6 @@ add_move "$DL_MD29" "$DL_NM29"
 
 echo ""
 #This starts the server after the process has Downloaded and moved all the mods.
-bypass=1
 ./arma3server start
 
 alert="update"
