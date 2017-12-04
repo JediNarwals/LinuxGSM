@@ -15,7 +15,7 @@ fn_script_log_info "Updating LinuxGSM"
 echo -ne "\n"
 
 if [ -z "${legacymode}" ];then
-	 Check and update _default.cfg
+	# Check and update _default.cfg
 	echo -ne "    checking config _default.cfg...\c"
 	config_file_diff=$(diff "${configdirdefault}/config-lgsm/${gameservername}/_default.cfg" <(${curlpath} -s "https://raw.githubusercontent.com/${githubuser}/${githubrepo}/${githubbranch}/lgsm/config-default/config-lgsm/${gameservername}/_default.cfg"))
 	if [ "${config_file_diff}" != "" ]; then
