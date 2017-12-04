@@ -193,6 +193,25 @@ fn_print_warn_nl(){
 	echo -en "\n"
 }
 
+# Update
+fn_print_update(){
+	if [ -n "${commandaction}" ]; then
+		echo -en "${creeol}[${yellow} UPDATE ${default}] ${commandaction} ${servicename}: $@"
+	else
+		echo -en "${creeol}[${yellow} UPDATE ${default}] $@"
+	fi
+}
+
+fn_print_update_nl(){
+	if [ -n "${commandaction}" ]; then
+		echo -en "${creeol}[${yellow} UPDATE ${default}] ${commandaction} ${servicename}: $@"
+	else
+		echo -en "${creeol}[${yellow} UPDATE ${default}] $@"
+	fi
+	sleep 0.5
+	echo -en "\n"
+}
+
 # [ INFO ]
 fn_print_info(){
 	if [ -n "${commandaction}" ]; then
