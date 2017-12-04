@@ -195,7 +195,10 @@ fn_start_tmux(){
 	fi
 	rm "${lgsmlogdir}/.${servicename}-tmux-error.tmp"
 	echo -en "\n"
-
+	if [ "${bypass}" != "on" ]; then
+		alert="start"
+		alert.sh
+	fi
 }
 
 fn_print_dots "${servername}"
@@ -218,9 +221,5 @@ if [ "${gamename}" == "TeamSpeak 3" ]; then
 	fn_start_teamspeak3
 else
 	fn_start_tmux
-	if [ "${bypass}" != "on" ]; then
-		alert="start"
-		alert.sh
-	fi
 fi
 core_exit.sh
