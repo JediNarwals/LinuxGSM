@@ -78,7 +78,6 @@ if [ -n "${functionsdir}" ]; then
 		for functionfile in *
 		do
 			fn_print_dots "    function ${functionfile}...\c"
-			fn_print_checking_eol
 			github_file_url_dir="lgsm/functions"
 			get_function_file=$(${curlpath} --fail -s "https://raw.githubusercontent.com/${githubuser}/${githubrepo}/${githubbranch}/${github_file_url_dir}/${functionfile}")
 			exitcode=$?
