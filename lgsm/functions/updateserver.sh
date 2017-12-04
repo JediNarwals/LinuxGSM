@@ -183,8 +183,8 @@ if [ ! -e "$STEAM_DIR" ]; then
 	(tar -xvzf $STEAMCMD_TARBALL)
 
 	#Install SteamCMD now and try to login, if required
-	if [ "$STEAM_USER" != "anonymous" ]; then
-		$STEAM_DIR/steamcmd.sh +login $STEAM_USER $STEAM_PASS +quit
+	if [ "${steamuser}" != "anonymous" ]; then
+		$STEAM_DIR/steamcmd.sh +login ${steamuser} ${steampass} +quit
 	else
 		$STEAM_DIR/steamcmd.sh +quit
 	fi
@@ -192,7 +192,7 @@ fi
 
 cd $BASE_DIR
 
-CmdArgs="+login $STEAM_USER $STEAM_PASS"
+CmdArgs="+login ${steamuser} ${steampass}"
 ShouldRun=0
 
 add_game(){
@@ -241,7 +241,7 @@ add_mod(){
 
 		OK=0
 		if [ ! -d "$DIR" ]; then
-			echo -e "[ \e[0;91;43m$2\e[0m ] Creating directory $DIR..."
+			#echo -e "[ \e[0;31m$2\e[0m ] Creating directory $DIR..."
 			(mkdir $DIR)
 			if [ ! -d "$DIR" ]; then
 				OK=1
@@ -250,9 +250,16 @@ add_mod(){
 		if [ "$OK" == "0" ]; then
 			CmdArgs="$CmdArgs +force_install_dir \"$DIR\" +workshop_download_item 107410 $MOD validate"
 			ShouldRun=1
-			echo -e "[ \e[0;32m$2\e[0m ] Mod Loaded!"
-		else
-			echo -e "[ \e[0;91;43m$2\e[0m ] Cannot add AppId $MOD into $DIR. Failed to create directory"
+      exitcode=$?
+      if [ ${exitcode} -ne 0 ]; then
+        echo -e "[ \e[0;31m$2\e[0m ] Mod Not Loaded!"
+        exit 1
+      else
+        echo -e "[ \e[0;32m$2\e[0m ] Mod Loaded!"
+      fi
+			#echo -e "[ \e[0;32m$2\e[0m ] Mod Loaded!"
+		#else
+			#echo -e "[ \e[0;91;43m$2\e[0m ] Cannot add AppId $MOD into $DIR. Failed to create directory"
 		fi
 	fi
 }
@@ -329,17 +336,24 @@ DIR_MOD="$2"
 	fi
 	if [ "$OK" == "0" ]; then
 		rm -r ~/serverfiles/$2/
-		echo -e "[ \e[0;32m$2\e[0m ] Removed old folder Successfully!"
-		cp -avru $DIR_MOD/steamapps/workshop/content/107410/$MOD/. ~/serverfiles/$2/
-		echo -e "[ \e[0;32m$2\e[0m ] Moved Successfully!"
-		cp -avu $DIR_MOD/steamapps/workshop/content/107410/$MOD/keys/. ~/serverfiles/keys/
-		echo -e "[ \e[0;32m$2\e[0m ] Server keys added Successfully!"
+		#echo -e "[ \e[0;32m$2\e[0m ] Removed old folder Successfully!"
+		cp -aru $DIR_MOD/steamapps/workshop/content/107410/$MOD/. ~/serverfiles/$2/
+		#echo -e "[ \e[0;32m$2\e[0m ] Moved Successfully!"
+		cp -au $DIR_MOD/steamapps/workshop/content/107410/$MOD/keys/. ~/serverfiles/keys/
+		#echo -e "[ \e[0;32m$2\e[0m ] Server keys added Successfully!"
 		convmv --lower -r --replace --notest ~/serverfiles/$2/
-		echo -e "[ \e[0;32m$2\e[0m ] Renamed all the files to lowercase Successfully!"
+		#echo -e "[ \e[0;32m$2\e[0m ] Renamed all the files to lowercase Successfully!"
 		ShouldRun=1
+    exitcode=$?
+    if [ ${exitcode} -ne 0 ]; then
+      echo -e "[ \e[0;31m$2\e[0m ] Failed Terribly"
+      exit 1
+    else
+      echo -e "[ \e[0;32m$2\e[0m ] Completed Successfully"
+    fi
 		#echo "Complete! You moved AppID $MOD into $DIR_MOD successfully."
-	else
-		echo -e "[ \e[0;33m$2\e[0m ] WARNING! Cannot move AppID $MOD into $DIR_MOD. Failed to create directory"
+	#else
+		#echo -e "[ \e[0;33m$2\e[0m ] WARNING! Cannot move AppID $MOD into $DIR_MOD. Failed to create directory"
 	fi
 fi
 }
@@ -389,4 +403,4 @@ echo "###################################"
 echo "###################################"
 echo ""
 
-exit 0
+core_exit.sh
