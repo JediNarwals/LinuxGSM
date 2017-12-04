@@ -407,9 +407,6 @@ echo ""
 bypass="on"
 command_start.sh
 
-alert="update"
-alert.sh
-
 echo ""
 echo ""
 echo "###################################"
@@ -420,5 +417,8 @@ echo "###         JediNarwals         ###"
 echo "###################################"
 echo "###################################"
 echo ""
+
+alert="update"
+alert.sh
 
 core_exit.sh
