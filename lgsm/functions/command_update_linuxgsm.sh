@@ -77,29 +77,29 @@ if [ -n "${functionsdir}" ]; then
 		cd "${functionsdir}"
 		for functionfile in *
 		do
-			fn_print_dots "    function ${functionfile}...\c"
+			echo -ne "    checking function ${functionfile}...\c"
 			github_file_url_dir="lgsm/functions"
 			get_function_file=$(${curlpath} --fail -s "https://raw.githubusercontent.com/${githubuser}/${githubrepo}/${githubbranch}/${github_file_url_dir}/${functionfile}")
 			exitcode=$?
 			function_file_diff=$(diff "${functionsdir}/${functionfile}" <(${curlpath} --fail -s "https://raw.githubusercontent.com/${githubuser}/${githubrepo}/${githubbranch}/${github_file_url_dir}/${functionfile}"))
 			if [ ${exitcode} -ne 0 ]; then
-				fn_print_fail_nl
+				fn_print_fail_eol_nl
 				echo -ne "    removing unknown function ${functionfile}...\c"
 				fn_script_log_fatal "removing unknown function ${functionfile}"
 				rm -f "${functionfile}"
 				if [ $? -ne 0 ]; then
-					fn_print_fail_nl
+					fn_print_fail_eol_nl
 					core_exit.sh
 				else
 					fn_print_ok_eol_nl
 				fi
 			elif [ "${function_file_diff}" != "" ]; then
-				fn_print_update_nl
+				fn_print_update_eol_nl
 				fn_script_log_info "checking function ${functionfile}: UPDATE"
 				rm -rf "${functionsdir}/${functionfile}"
 				fn_update_function
 			else
-				fn_print_ok_nl
+				fn_print_ok_eol_nl
 			fi
 		done
 	fi
