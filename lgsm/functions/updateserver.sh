@@ -403,8 +403,7 @@ add_move "$DL_MD29" "$DL_NM29"
 
 echo ""
 #This starts the server after the process has Downloaded and moved all the mods.
-bypass="on"
-command_start.sh
+./arma3server start
 
 echo ""
 echo ""
