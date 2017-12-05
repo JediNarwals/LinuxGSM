@@ -278,10 +278,8 @@ fn_stop_tmux(){
 		fn_print_fail_nl "Unable to stop${servername}"
 		fn_script_log_fatal "Unable to stop${servername}"
 	fi
-	if [ "${bypass}" == "0" ]; then
-		alert="stop"
-		alert.sh
-	fi
+	alert="stop"
+	alert.sh
 }
 
 # checks if the server is already stopped before trying to stop.
