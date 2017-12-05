@@ -1,6 +1,6 @@
 <p align="center">
 	<a href="https://gameservermanagers.com">
-		<img src="https://i.imgur.com/Ri0P4vM.jpg" alt="linux Game Server Managers" width="600" />
+		<img src="https://i.imgur.com/Ri0P4vM.jpg" alt="linux Game Server Managers" width="800" />
 	</a>
 </p>
 
