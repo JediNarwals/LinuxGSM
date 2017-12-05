@@ -23,7 +23,7 @@ Game servers traditionally are not easy to manage yourself. Admins often have to
 	<li>Details</li>
 	<li>Installer (SteamCMD)</li>
 	<li>Monitor</li>
-	<li>Alerts (Email, Pushbullet)</li>
+	<li>Alerts (Discord, Pushbullet, Emails, and more)</li>
 	<li>Update (SteamCMD)</li>
 	<li>Start/Stop/Restart server</li>
 </ul>
