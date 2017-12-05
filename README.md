@@ -11,6 +11,8 @@
 
 <a href="https://gameservermanagers.com">LinuxGSM</a> is the command line tool for quick, simple deployment and management of dedicated game servers.
 
+This version of LinuxGSM was branched off and protected under an <a href="https://github.com/JediNarwals/LinuxGSM/blob/master/LICENSE">MIT License</a>. If you would like to use our code or have any questions about our code please reach out to us on our website: http://www.eurof-team.org
+
 <h2>Hassle-Free Dedicated Servers</h2>
 Game servers traditionally are not easy to manage yourself. Admins often have to spend hours just messing around trying to get their server working. LinuxGSM is designed to be a simple as possible allowing admins to spend less time on management and more time gaming.
 
