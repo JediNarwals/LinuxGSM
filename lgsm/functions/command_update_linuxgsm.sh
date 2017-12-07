@@ -55,7 +55,7 @@ if [ -z "${legacymode}" ];then
 			fn_print_ok_nl "${selfname}"
 			echo -e "	Backup: ${backupdir}/script/${selfname}-$(date +"%m_%d_%Y_%M").bak"
 		fi
-		echo -ne "    fetching ${selfname}...\c"
+		#echo -ne "    fetching ${selfname}...\c"
 		cp "${tmpdir}/linuxgsm.sh" "${rootdir}/${selfname}"
 		sed -i "s/shortname=\"core\"/shortname=\"${shortname}\"/g" "${rootdir}/${selfname}"
 		sed -i "s/gameservername=\"core\"/gameservername=\"${gameservername}\"/g" "${rootdir}/${selfname}"
