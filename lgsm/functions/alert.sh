@@ -28,7 +28,7 @@ fn_alert_log(){
 
 fn_alert_test(){
 	fn_script_log_info "Sending test alert"
-	alertsubject="Alert - ${servicename} - Test"
+	alertsubject="Alert - ${servername} - Test"
 	alertemoji="🚧"
 	alertsound="1"
 	alerturl="not enabled"
@@ -38,7 +38,7 @@ fn_alert_test(){
 
 fn_alert_restart(){
 	fn_script_log_info "Sending alert: Restarted: ${executable}"
-	alertsubject="Alert - ${servicename} - Restarted"
+	alertsubject="Alert - ${servername} - Restarted"
 	alertemoji="🚨"
 	alertsound="2"
 	alerturl="not enabled"
@@ -48,7 +48,7 @@ fn_alert_restart(){
 
 fn_alert_restart_query(){
 	fn_script_log_info "Sending alert: Restarted: ${gsquerycmd}"
-	alertsubject="Alert - ${servicename} - Restarted"
+	alertsubject="Alert - ${servername} - Restarted"
 	alertemoji="🚨"
 	alertsound="2"
 	alerturl="not enabled"
@@ -58,7 +58,7 @@ fn_alert_restart_query(){
 
 fn_alert_stop(){
 	fn_script_log_info "Sending alert: Stopped: ${executable} was stopped"
-	alertsubject="Alert - ${servicename} - Stopped"
+	alertsubject="Alert - ${servername} - Stopped"
 	alertemoji="🚨"
 	alertsound="2"
 	alerturl="not enabled"
@@ -68,7 +68,7 @@ fn_alert_stop(){
 
 fn_alert_start(){
 	fn_script_log_info "Sending alert: started: ${executable} was started"
-	alertsubject="Alert - ${servicename} - started"
+	alertsubject="Alert - ${servername} - started"
 	alertemoji="❗"
 	alertsound="1"
 	alerturl="not enabled"
@@ -78,7 +78,7 @@ fn_alert_start(){
 
 fn_alert_update(){
 	fn_script_log_info "Sending alert: Updated"
-	alertsubject="Alert - ${servicename} - Updated"
+	alertsubject="Alert - ${servername} - Updated"
 	alertemoji="🎮"
 	alertsound="1"
 	alerturl="not enabled"
@@ -88,7 +88,7 @@ fn_alert_update(){
 
 fn_alert_monitor(){
 	fn_script_log_info "Sending alert: Monitor Failed: ${executable} failed a monitor check"
-	alertsubject="Alert - ${servicename} - failed monitor check"
+	alertsubject="Alert - ${servername} - failed monitor check"
 	alertemoji="🚨"
 	alertsound="2"
 	alerturl="not enabled"
@@ -98,7 +98,7 @@ fn_alert_monitor(){
 
 fn_alert_permissions(){
 	fn_script_log_info "Sending alert: Permissions error"
-	alertsubject="Alert - ${servicename}: Permissions error"
+	alertsubject="Alert - ${servername}: Permissions error"
 	alertemoji="❗"
 	alertsound="2"
 	alerturl="not enabled"
