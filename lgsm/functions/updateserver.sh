@@ -76,8 +76,8 @@ DL_MD8=820924072
 DL_NM9="@cba_a3"
 DL_MD9=450814997
 
-DL_NM10="@fa18superhornet"
-DL_MD10=743099837
+DL_NM10="@firaws"
+DL_MD10=366425329
 
 DL_NM11="@sma"
 DL_MD11=699630614
@@ -135,6 +135,9 @@ DL_MD28=773131200
 
 DL_NM29="@acecomptusaf"
 DL_MD29=773125288
+
+DL_NM30="@f15eagle"
+DL_MD30=582478120
 
 #Repeat this and the call to add_game at the bottom of this
 #script to add more servers
@@ -307,6 +310,7 @@ add_mod "$DL_MD26" "$DL_NM26"
 add_mod "$DL_MD27" "$DL_NM27"
 add_mod "$DL_MD28" "$DL_NM28"
 add_mod "$DL_MD29" "$DL_NM29"
+add_mod "$DL_MD30" "$DL_NM30"
 
 CmdArgs="$CmdArgs +quit"
 
@@ -400,6 +404,7 @@ add_move "$DL_MD26" "$DL_NM26"
 add_move "$DL_MD27" "$DL_NM27"
 add_move "$DL_MD28" "$DL_NM28"
 add_move "$DL_MD29" "$DL_NM29"
+add_move "$DL_MD30" "$DL_NM30"
 
 echo ""
 #This starts the server after the process has Downloaded and moved all the mods.
