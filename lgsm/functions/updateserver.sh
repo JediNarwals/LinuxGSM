@@ -64,10 +64,10 @@ DL_MD3=884966711
 DL_NM4="@acex"
 DL_MD4=708250744
 
-DL_NM5="@cupterrainscore"
+DL_NM5="@cupcore"
 DL_MD5=583496184
 
-DL_NM6="@cupterrainsmaps"
+DL_NM6="@cupmaps"
 DL_MD6=583544987
 
 DL_NM7="@rhsafrf"
