@@ -130,6 +130,12 @@ DL_MD25=450814997
 DL_NM26="@kunduz"
 DL_MD26=421620913
 
+DL_NM27="@lythium"
+DL_MD27=909547724
+
+DL_NM28="@jbad"
+DL_MD28=520618345
+
 #Repeat this and the call to add_game at the bottom of this
 #script to add more servers
 
@@ -398,7 +404,6 @@ echo ""
 #This starts the server after the process has Downloaded and moved all the mods.
 
 ./arma3server start
-
 
 echo ""
 echo ""
