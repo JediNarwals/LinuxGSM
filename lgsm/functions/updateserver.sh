@@ -55,89 +55,89 @@ DL_MD1=866772689
 DL_NM2="@aceani"
 DL_MD2=766491311
 
-DL_NM3="@acex"
-DL_MD3=708250744
+DL_NM3="@acecomptafrf"
+DL_MD3=773131200
 
-DL_NM4="@advancedrappelling"
-DL_MD4=713709341
+DL_NM4="@acecomptusaf"
+DL_MD4=773125288
 
-DL_NM5="@advancedslingloading"
-DL_MD5=615007497
+DL_NM5="@acex"
+DL_MD5=708250744
 
-DL_NM6="@advancedtowing"
-DL_MD6=639837898
+DL_NM6="@achilles"
+DL_MD6=723217262
 
-DL_NM7="@advancedurbanrappelling"
-DL_MD7=730310357
+DL_NM7="@asrai3"
+DL_MD7=642457233
 
 DL_NM8="@backpackonchest"
 DL_MD8=820924072
 
-DL_NM9="@cba_a3"
-DL_MD9=450814997
+DL_NM9="@bafv4034"
+DL_MD9=876519903
 
-DL_NM10="@firaws"
-DL_MD10=366425329
+DL_NM10="@balcac"
+DL_MD10=882136076
 
-DL_NM11="@sma"
-DL_MD11=699630614
+DL_NM11="@cba_a3"
+DL_MD11=450814997
 
-DL_NM12="@enhancedmovement"
-DL_MD12=333310405
+DL_NM12="@claclafghan"
+DL_MD12=761349672
 
-DL_NM13="@task_force_radio"
-DL_MD13=620019431
+DL_NM13="@cupterrainscore"
+DL_MD13=583496184
 
-DL_NM14="@mcc"
-DL_MD14=338988835
+DL_NM14="@cupterrainsmaps"
+DL_MD14=583544987
 
-DL_NM15="@rhsusaf"
-DL_MD15=843577117
+DL_NM15="@enhancedmovement"
+DL_MD15=333310405
 
-DL_NM16="@rhsafrf"
-DL_MD16=843425103
+DL_NM16="@f15eagle"
+DL_MD16=582478120
 
-DL_NM17="@projectopfor"
-DL_MD17=735566597
+DL_NM17="@firaws"
+DL_MD17=366425329
 
-DL_NM18="@shacktacui"
-DL_MD18=498740884
+DL_NM18="@gosalrayak"
+DL_MD18=648172507
 
-DL_NM19="@cupterrainscore"
-DL_MD19=583496184
+DL_NM19="@gosnziwasogo"
+DL_MD19=694603075
 
-DL_NM20="@cupterrainsmaps"
-DL_MD20=583544987
+DL_NM20="@hazarkotvalley"
+DL_MD20=766294759
 
-DL_NM21="@claclafghan"
-DL_MD21=761349672
+DL_NM21="@longbow"
+DL_MD21=745865494
 
-DL_NM22="@gosalrayak"
-DL_MD22=648172507
+DL_NM22="@mcc"
+DL_MD22=338988835
 
-DL_NM23="@gosnziwasogo"
-DL_MD23=694603075
+DL_NM23="@projectopfor"
+DL_MD23=735566597
 
-DL_NM24="@hazarkotvalley"
-DL_MD24=766294759
+DL_NM24="@rhsusaf"
+DL_MD24=843577117
 
-DL_NM25="@asrai3"
-DL_MD25=642457233
+DL_NM25="@rhsafrf"
+DL_MD25=843425103
 
-DL_NM26="@achilles"
-DL_MD26=723217262
+DL_NM26="@shacktacui"
+DL_MD26=498740884
 
-DL_NM27="@vsmaio"
-DL_MD27=823636749
+DL_NM27="@sma"
+DL_MD27=699630614
 
-DL_NM28="@acecomptafrf"
-DL_MD28=773131200
+DL_NM28="@specarm"
+DL_MD28=329124061
 
-DL_NM29="@acecomptusaf"
-DL_MD29=773125288
+DL_NM29="@task_force_radio"
+DL_MD29=620019431
 
-DL_NM30="@f15eagle"
-DL_MD30=582478120
+DL_NM30="@vsmaio"
+DL_MD30=823636749
 
 #Repeat this and the call to add_game at the bottom of this
 #script to add more servers
