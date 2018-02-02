@@ -109,35 +109,32 @@ DL_MD19=694603075
 DL_NM20="@hazarkotvalley"
 DL_MD20=766294759
 
-DL_NM21="@longbow"
-DL_MD21=745865494
+DL_NM21="@mcc"
+DL_MD21=338988835
 
-DL_NM22="@mcc"
-DL_MD22=338988835
+DL_NM22="@projectopfor"
+DL_MD22=735566597
 
-DL_NM23="@projectopfor"
-DL_MD23=735566597
+DL_NM23="@rhsusaf"
+DL_MD23=843577117
 
-DL_NM24="@rhsusaf"
-DL_MD24=843577117
+DL_NM24="@rhsafrf"
+DL_MD24=843425103
 
-DL_NM25="@rhsafrf"
-DL_MD25=843425103
+DL_NM25="@shacktacui"
+DL_MD25=498740884
 
-DL_NM26="@shacktacui"
-DL_MD26=498740884
+DL_NM26="@sma"
+DL_MD26=699630614
 
-DL_NM27="@sma"
-DL_MD27=699630614
+DL_NM27="@specarm"
+DL_MD27=329124061
 
-DL_NM28="@specarm"
-DL_MD28=329124061
+DL_NM28="@task_force_radio"
+DL_MD28=620019431
 
-DL_NM29="@task_force_radio"
-DL_MD29=620019431
-
-DL_NM30="@vsmaio"
-DL_MD30=823636749
+DL_NM29="@vsmaio"
+DL_MD29=823636749
 
 #Repeat this and the call to add_game at the bottom of this
 #script to add more servers
