@@ -45,7 +45,7 @@ configdirdefault="${lgsmdir}/config-default"
 # from a different repo and/or branch.
 githubuser="JediNarwals"
 githubrepo="LinuxGSM"
-githubbranch="Public"
+githubbranch="koth"
 
 ## GitHub selector for Mission install
 # Allows for missions to be uploaded to a github repo
