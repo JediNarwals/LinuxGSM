@@ -79,17 +79,17 @@ DL_MD8=843577117
 DL_NM9="@rhsgref"
 DL_MD9=843593391
 
-DL_NM10="@smarhscompt"
-DL_MD10=1112431110
+DL_NM10=
+DL_MD10=
 
-DL_NM11="@sma"
-DL_MD11=699630614
+DL_NM11=
+DL_MD11=
 
-DL_NM12="@vsmaio"
-DL_MD12=823636749
+DL_NM12=
+DL_MD12=
 
-DL_NM13="@acre2"
-DL_MD13=751965892
+DL_NM13=
+DL_MD13=
 
 DL_NM14="@task_force_radio"
 DL_MD14=620019431
@@ -106,29 +106,29 @@ DL_MD17=338988835
 DL_NM18="@shacktacui"
 DL_MD18=498740884
 
-DL_NM19="@enhancedmovement"
-DL_MD19=333310405
+DL_NM19=
+DL_MD19=
 
-DL_NM20="@advancedtowing"
-DL_MD20=639837898
+DL_NM20=
+DL_MD20=
 
 DL_NM21="@backpackonchest"
 DL_MD21=820924072
 
-DL_NM22="@chernaruswinter"
-DL_MD22=718590354
+DL_NM22=
+DL_MD22=
 
-DL_NM23="@gosalrayak"
-DL_MD23=648172507
+DL_NM23=
+DL_MD23=
 
-DL_NM24="@gosnziwasogo"
-DL_MD24=694603075
+DL_NM24=
+DL_MD24=
 
 DL_NM25="@cba_a3"
 DL_MD25=450814997
 
-DL_NM26="@kunduz"
-DL_MD26=421620913
+DL_NM26=
+DL_MD26=
 
 DL_NM27="@lythium"
 DL_MD27=909547724
@@ -154,8 +154,7 @@ echo ""
 echo "updateserver.sh"
 echo "Linux Game Server/Mod updater"
 echo "by JediNarwals"
-echo "Made for VikingPMC"
-echo "Sponsored by EuroForce"
+echo "Made for TacticalGaming"
 echo "Integrated with LGSM"
 echo ""
 echo "================================="
