@@ -8,7 +8,7 @@
 json=$(cat <<EOF
 {
 "username":"Arma Server",
-"avatar_url":"https://i.imgur.com/8rrLdon.png",
+"avatar_url":"https://i.imgur.com/AY1dSzc.png",
 "file":"content",
 
 "embeds": [{
@@ -18,8 +18,8 @@ json=$(cat <<EOF
 	"description": "",
 	"url": "",
 	"type": "content",
-	"thumbnail": {"url": "https://i.imgur.com/8rrLdon.png"},
-	"footer": {"text": "LinuxGSM", "icon_url": "https://i.imgur.com/8rrLdon.png"},
+	"thumbnail": {"url": "https://i.imgur.com/AY1dSzc.png"},
+	"footer": {"text": "LinuxGSM", "icon_url": "https://i.imgur.com/AY1dSzc.png"},
 	"fields": [
 			{
 				"name": "Alert Message",
