@@ -88,8 +88,8 @@ DL_MD11=
 DL_NM12=
 DL_MD12=
 
-DL_NM13=
-DL_MD13=
+DL_NM13="@tguniforms"
+DL_MD13=821909091
 
 DL_NM14="@task_force_radio"
 DL_MD14=620019431
