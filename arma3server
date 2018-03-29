@@ -44,7 +44,7 @@ configdirdefault="${lgsmdir}/config-default"
 # from a different repo and/or branch.
 githubuser="JediNarwals"
 githubrepo="LinuxGSM"
-githubbranch="TacticalGaming"
+githubbranch="TacticalGamingDEV"
 
 # Core Function that is required first
 core_functions.sh(){
