@@ -37,8 +37,8 @@ fn_alert_test(){
 }
 
 fn_alert_restart(){
-	fn_script_log_info "Sending alert: Restarted: ${executable} not running"
-	alertsubject="Alert - ${servername} - Restarted"
+	fn_script_log_info "Sending alert: Restarting: ${executable} not running"
+	alertsubject="Alert - ${servername} - Not responding"
 	alertemoji="🚨"
 	alertsound="2"
 	alerturl="not enabled"
