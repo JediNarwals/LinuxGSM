@@ -52,32 +52,32 @@ DL_SV7=
 DL_NM0="@ace"
 DL_MD0=463939057
 
-DL_NM1="@ace3comptrhsafrf"
-DL_MD1=773131200
+DL_NM1=
+DL_MD1=
 
-DL_NM2="@ace3comptrhsusaf"
-DL_MD2=773125288
+DL_NM2=
+DL_MD2=
 
-DL_NM3="@ace3comptrhsgref"
-DL_MD3=884966711
+DL_NM3=
+DL_MD3=
 
 DL_NM4=
 DL_MD4=
 
-DL_NM5="@cupcore"
-DL_MD5=583496184
+DL_NM5=
+DL_MD5=
 
-DL_NM6="@cupmaps"
-DL_MD6=583544987
+DL_NM6=
+DL_MD6=
 
-DL_NM7="@rhsafrf"
-DL_MD7=843425103
+DL_NM7=
+DL_MD7=
 
-DL_NM8="@rhsusaf"
-DL_MD8=843577117
+DL_NM8=
+DL_MD8=
 
-DL_NM9="@rhsgref"
-DL_MD9=843593391
+DL_NM9=
+DL_MD9=
 
 DL_NM10=
 DL_MD10=
@@ -94,17 +94,17 @@ DL_MD13=
 DL_NM14="@task_force_radio"
 DL_MD14=620019431
 
-DL_NM15="@projectopfor"
-DL_MD15=735566597
+DL_NM15=
+DL_MD15=
 
-DL_NM16="@aresmodachilles"
-DL_MD16=723217262
+DL_NM16=
+DL_MD16=
 
-DL_NM17="@mcc"
-DL_MD17=338988835
+DL_NM17=
+DL_MD17=
 
-DL_NM18="@shacktacui"
-DL_MD18=498740884
+DL_NM18=
+DL_MD18=
 
 DL_NM19=
 DL_MD19=
@@ -112,8 +112,8 @@ DL_MD19=
 DL_NM20=
 DL_MD20=
 
-DL_NM21="@backpackonchest"
-DL_MD21=820924072
+DL_NM21=
+DL_MD21=
 
 DL_NM22=
 DL_MD22=
@@ -130,11 +130,11 @@ DL_MD25=450814997
 DL_NM26=
 DL_MD26=
 
-DL_NM27="@lythium"
-DL_MD27=909547724
+DL_NM27=
+DL_MD27=
 
-DL_NM28="@jbad"
-DL_MD28=520618345
+DL_NM28=
+DL_MD28=
 
 #Repeat this and the call to add_game at the bottom of this
 #script to add more servers
