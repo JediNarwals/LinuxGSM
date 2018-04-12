@@ -350,9 +350,10 @@ DIR_MOD="$2"
 		#echo -e "[ \e[0;32m$2\e[0m ] Removed old folder Successfully!"
 		cp -aru $DIR_MOD/steamapps/workshop/content/107410/$MOD/. ~/serverfiles/$2/
 		#echo -e "[ \e[0;32m$2\e[0m ] Moved Successfully!"
-		cp -au $DIR_MOD/steamapps/workshop/content/107410/$MOD/keys/. ~/serverfiles/keys/
+		#cp -au $DIR_MOD/steamapps/workshop/content/107410/$MOD/keys/. ~/serverfiles/keys/
 		#echo -e "[ \e[0;32m$2\e[0m ] Server keys added Successfully!"
 		convmv --lower -r --replace --notest ~/serverfiles/$2/
+		cp -au ~/serverfiles/$MOD/keys/. ~/serverfiles/keys/
 		#echo -e "[ \e[0;32m$2\e[0m ] Renamed all the files to lowercase Successfully!"
 		ShouldRun=1
     exitcode=$?
