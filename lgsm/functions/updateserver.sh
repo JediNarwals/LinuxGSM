@@ -228,7 +228,6 @@ add_game(){
 			fi
 		fi
 		if [ "$OK" == "0" ]; then
-			#echo "Validating install in $DIR..."
 			CmdArgs="$CmdArgs +force_install_dir \"$DIR\" +app_update $GAME validate"
 			ShouldRun=1
 			echo -e "[ \e[0;32m$3\e[0m ] Game Loaded!"
@@ -252,7 +251,6 @@ add_mod(){
 
 		OK=0
 		if [ ! -d "$DIR" ]; then
-			#echo -e "[ \e[0;31m$2\e[0m ] Creating directory $DIR..."
 			(mkdir $DIR)
 			if [ ! -d "$DIR" ]; then
 				OK=1
@@ -268,9 +266,6 @@ add_mod(){
       else
         echo -e "[ \e[0;32m$2\e[0m ] Mod Loaded!"
       fi
-			#echo -e "[ \e[0;32m$2\e[0m ] Mod Loaded!"
-		#else
-			#echo -e "[ \e[0;91;43m$2\e[0m ] Cannot add AppId $MOD into $DIR. Failed to create directory"
 		fi
 	fi
 }
@@ -347,13 +342,9 @@ DIR_MOD="$2"
 	fi
 	if [ "$OK" == "0" ]; then
 		rm -r ~/serverfiles/$2/
-		#echo -e "[ \e[0;32m$2\e[0m ] Removed old folder Successfully!"
 		cp -aru $DIR_MOD/steamapps/workshop/content/107410/$MOD/. ~/serverfiles/$2/
-		#echo -e "[ \e[0;32m$2\e[0m ] Moved Successfully!"
-		cp -au $DIR_MOD/steamapps/workshop/content/107410/$MOD/keys/. ~/serverfiles/keys/
-		#echo -e "[ \e[0;32m$2\e[0m ] Server keys added Successfully!"
 		convmv --lower -r --replace --notest ~/serverfiles/$2/
-		#echo -e "[ \e[0;32m$2\e[0m ] Renamed all the files to lowercase Successfully!"
+		cp -au ~/serverfiles/$DIR_MOD/keys/. ~/serverfiles/keys/
 		ShouldRun=1
     exitcode=$?
     if [ ${exitcode} -ne 0 ]; then
@@ -362,9 +353,6 @@ DIR_MOD="$2"
     else
       echo -e "[ \e[0;32m$2\e[0m ] Completed Successfully"
     fi
-		#echo "Complete! You moved AppID $MOD into $DIR_MOD successfully."
-	#else
-		#echo -e "[ \e[0;33m$2\e[0m ] WARNING! Cannot move AppID $MOD into $DIR_MOD. Failed to create directory"
 	fi
 fi
 }
