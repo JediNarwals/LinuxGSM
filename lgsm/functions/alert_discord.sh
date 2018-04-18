@@ -7,7 +7,7 @@
 
 json=$(cat <<EOF
 {
-"username":"Development Server",
+"username":"Invade and Annex Server",
 "avatar_url":"https://i.imgur.com/AY1dSzc.png",
 "file":"content",
 
