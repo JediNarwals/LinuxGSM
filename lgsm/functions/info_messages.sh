@@ -139,7 +139,7 @@ fn_info_message_gameserver(){
 		fi
 
 		# Server ip
-		echo -e "${blue}Server IP:\t${default}${getip}:${port}"
+		echo -e "${blue}Server IP:\t${default}${ip}:${port}"
 
 		# External server ip
 		if [ -n "${extip}" ]; then
