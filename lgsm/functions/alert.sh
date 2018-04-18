@@ -37,7 +37,7 @@ fn_alert_test(){
 }
 
 fn_alert_restart(){
-	fn_script_log_info "Sending alert: Restarted: ${executable} not running"
+	fn_script_log_info "Sending alert: Restarted: ${executable} was restarted"
 	alertsubject="Alert - ${servername} - Restarted"
 	alertemoji="❗"
 	alertsound="2"
@@ -47,7 +47,7 @@ fn_alert_restart(){
 }
 
 fn_alert_restart_query(){
-	fn_script_log_info "Sending alert: Restarted: ${gsquerycmd}"
+	fn_script_log_info "Sending alert: Restarted: ${gsquerycmd} not running"
 	alertsubject="Alert - ${servername} - Restarted"
 	alertemoji="🚨"
 	alertsound="2"
