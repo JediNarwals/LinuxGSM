@@ -195,7 +195,7 @@ fn_start_tmux(){
 	fi
 	rm "${lgsmlogdir}/.${servicename}-tmux-error.tmp"
 	echo -en "\n"
-	if [ -z "${exitbypass}"]; then
+	if [ -z "${exitbypass}" ]; then
 		alert="stop"
 		alert.sh
 	fi
