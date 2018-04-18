@@ -13,5 +13,6 @@ exitbypass=1
 command_stop.sh
 exitbypass=1
 command_start.sh
+
 alert="restart"
 alert.sh
