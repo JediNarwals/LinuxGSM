@@ -47,7 +47,7 @@ fn_monitor_teamspeak3(){
 		fn_print_fail_eol_nl
 		fn_script_log_error "Checking session: ${ts3error}: FAIL"
 		failurereason="${ts3error}"
-		alert="restart"
+		alert="restartquery"
 		alert.sh
 		fn_script_log_info "Monitor is starting ${servername}"
 		sleep 1
@@ -65,7 +65,7 @@ fn_monitor_mumble(){
 		fn_print_fail_eol_nl
 		fn_script_log_error "Checking session: Not listening to port ${port}"
 		failurereason="Checking session: Not listening to port ${port}"
-		alert="restart"
+		alert="restartquery"
 		alert.sh
 		fn_script_log_info "Monitor is starting ${servername}"
 		sleep 1
@@ -95,7 +95,7 @@ fn_monitor_tmux(){
 		fn_print_error "Checking session: "
 		fn_print_fail_eol_nl
 		fn_script_log_error "Checking session: FAIL"
-		alert="restart"
+		alert="restartquery"
 		alert.sh
 		fn_script_log_info "Monitor is starting ${servername}"
 		sleep 1

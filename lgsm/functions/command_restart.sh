@@ -11,4 +11,8 @@ local function_selfname="$(basename "$(readlink -f "${BASH_SOURCE[0]}")")"
 info_config.sh
 exitbypass=1
 command_stop.sh
+exitbypass=1
 command_start.sh
+
+alert="restart"
+alert.sh
