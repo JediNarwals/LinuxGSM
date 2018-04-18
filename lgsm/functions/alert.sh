@@ -39,11 +39,11 @@ fn_alert_test(){
 fn_alert_restart(){
 	fn_script_log_info "Sending alert: Restarted: ${executable} not running"
 	alertsubject="Alert - ${servername} - Restarted"
-	alertemoji="🚨"
+	alertemoji="❗"
 	alertsound="2"
 	alerturl="not enabled"
-	alertbody="${servicename} not running"
-	alertcolor="10038562"
+	alertbody="${servicename} was restarted"
+	alertcolor="11027200"
 }
 
 fn_alert_restart_query(){
