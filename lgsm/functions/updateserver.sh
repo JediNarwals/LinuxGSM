@@ -161,7 +161,8 @@ echo "================================="
 echo ""
 
 #This will stop the server in preperation of the validation process.
-./arma3server stop
+exitbypass=1
+command_stop.sh
 
 #Get the current directory (snippet from SourceCMD's sourcecmd.sh)
 BASE_DIR="$(cd "${0%/*}" && echo $PWD)"
@@ -389,8 +390,8 @@ add_move "$DL_MD29" "$DL_NM29"
 
 echo ""
 #This starts the server after the process has Downloaded and moved all the mods.
-
-./arma3server start
+exitbypass=1
+command_start.sh
 
 echo ""
 echo ""
