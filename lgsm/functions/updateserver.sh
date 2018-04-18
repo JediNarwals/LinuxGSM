@@ -161,7 +161,8 @@ echo "================================="
 echo ""
 
 #This will stop the server in preperation of the validation process.
-./arma3server stop
+exitbypass=1
+command_stop.sh
 
 #Get the current directory (snippet from SourceCMD's sourcecmd.sh)
 BASE_DIR="$(cd "${0%/*}" && echo $PWD)"
@@ -344,7 +345,8 @@ DIR_MOD="$2"
 		rm -r ~/serverfiles/$2/
 		cp -aru $DIR_MOD/steamapps/workshop/content/107410/$MOD/. ~/serverfiles/$2/
 		convmv --lower -r --replace --notest ~/serverfiles/$2/
-		cp -au ~/serverfiles/$DIR_MOD/keys/. ~/serverfiles/keys/
+		cp -au ~/serverfiles/$2/keys/. ~/serverfiles/keys/
+		cp -au ~/serverfiles/$2/key/. ~/serverfiles/keys/
 		ShouldRun=1
     exitcode=$?
     if [ ${exitcode} -ne 0 ]; then
@@ -389,8 +391,8 @@ add_move "$DL_MD29" "$DL_NM29"
 
 echo ""
 #This starts the server after the process has Downloaded and moved all the mods.
-
-./arma3server start
+exitbypass=1
+command_start.sh
 
 echo ""
 echo ""
