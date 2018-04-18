@@ -1,7 +1,7 @@
 #!/bin/bash
 # LinuxGSM alert_pushbullet.sh function
 # Author: Daniel Gibbs
-# Website: https://gameservermanagers.com
+# Website: https://linuxgsm.com
 # Description: Sends Pushbullet Messenger alert.
 
 local commandname="ALERT"
@@ -13,7 +13,7 @@ json=$(cat <<EOF
 	"channel_tag": "${channeltag}",
 	"type": "note",
 	"title": "${alertemoji} ${alertsubject} ${alertemoji}",
-	"body": "Message\n${alertbody}\n\nGame\n${gamename}\n\nServer name\n${servername}\n\nServer IP\n${ip}:${port}\n"
+	"body": "Message\n${alertbody}\n\nGame\n${gamename}\n\nServer name\n${servername}\n\nHostname\n${HOSTNAME}\n\nServer IP\n${ip}:${port}\n\nMore info\n${alerturl}"
 }
 EOF
 )

@@ -2,7 +2,7 @@
 # LinuxGSM core_messages.sh function
 # Author: Daniel Gibbs
 # Contributor: s-eam
-# Website: https://gameservermanagers.com
+# Website: https://linuxgsm.com
 # Description: Defines on-screen messages such as [  OK  ] and how script logs look.
 
 # nl: new line: message is following by a new line
@@ -117,24 +117,6 @@ fn_print_dots_nl(){
 	echo -en "\n"
 }
 
-fn_print_dots_fn(){
-	if [ -n "${commandaction}" ]; then
-		echo -en "${creeol}[ .... ] ${commandaction} ${servicename}: ${functionfile}"
-	else
-		echo -en "${creeol}[ .... ] ${functionfile}"
-	fi
-}
-
-fn_print_dots_fn_nl(){
-	if [ -n "${commandaction}" ]; then
-		echo -e "${creeol}[ .... ] ${commandaction} ${servicename}: ${functionfile}"
-	else
-		echo -e "${creeol}[ .... ] ${functionfile}"
-	fi
-	sleep 0.5
-	echo -en "\n"
-}
-
 # [  OK  ]
 fn_print_ok(){
 	if [ -n "${commandaction}" ]; then
@@ -149,24 +131,6 @@ fn_print_ok_nl(){
 		echo -en "${creeol}[${green}  OK  ${default}] ${commandaction} ${servicename}: $@"
 	else
 		echo -en "${creeol}[${green}  OK  ${default}] $@"
-	fi
-	sleep 0.5
-	echo -en "\n"
-}
-
-fn_print_ok_fn(){
-	if [ -n "${commandaction}" ]; then
-		echo -en "${creeol}[${green}  OK  ${default}] ${commandaction} ${servicename}: ${functionfile}"
-	else
-		echo -en "${creeol}[${green}  OK  ${default}] ${functionfile}"
-	fi
-}
-
-fn_print_ok_fn_nl(){
-	if [ -n "${commandaction}" ]; then
-		echo -en "${creeol}[${green}  OK  ${default}] ${commandaction} ${servicename}: ${functionfile}"
-	else
-		echo -en "${creeol}[${green}  OK  ${default}] ${functionfile}"
 	fi
 	sleep 0.5
 	echo -en "\n"
@@ -191,24 +155,6 @@ fn_print_fail_nl(){
 	echo -en "\n"
 }
 
-fn_print_fail_fn(){
-	if [ -n "${commandaction}" ]; then
-		echo -en "${creeol}[${red} FAIL ${default}] ${commandaction} ${servicename}: ${functionfile}"
-	else
-		echo -en "${creeol}[${red} FAIL ${default}] ${functionfile}"
-	fi
-}
-
-fn_print_fail_fn_nl(){
-	if [ -n "${commandaction}" ]; then
-		echo -en "${creeol}[${red} FAIL ${default}] ${commandaction} ${servicename}: ${functionfile}"
-	else
-		echo -en "${creeol}[${red} FAIL ${default}] ${functionfile}"
-	fi
-	sleep 0.5
-	echo -en "\n"
-}
-
 # [ ERROR ]
 fn_print_error(){
 	if [ -n "${commandaction}" ]; then
@@ -223,24 +169,6 @@ fn_print_error_nl(){
 		echo -en "${creeol}[${red}ERROR ${default}] ${commandaction} ${servicename}: $@"
 	else
 		echo -en "${creeol}[${red}ERROR ${default}] $@"
-	fi
-	sleep 0.5
-	echo -en "\n"
-}
-
-fn_print_error_fn(){
-	if [ -n "${commandaction}" ]; then
-		echo -en "${creeol}[${red}ERROR ${default}] ${commandaction} ${servicename}: ${functionfile}"
-	else
-		echo -en "${creeol}[${red}ERROR ${default}] ${functionfile}"
-	fi
-}
-
-fn_print_error_fn_nl(){
-	if [ -n "${commandaction}" ]; then
-		echo -en "${creeol}[${red}ERROR ${default}] ${commandaction} ${servicename}: ${functionfile}"
-	else
-		echo -en "${creeol}[${red}ERROR ${default}] ${functionfile}"
 	fi
 	sleep 0.5
 	echo -en "\n"
@@ -265,43 +193,6 @@ fn_print_warn_nl(){
 	echo -en "\n"
 }
 
-fn_print_warn_fn(){
-	if [ -n "${commandaction}" ]; then
-		echo -en "${creeol}[${yellow} WARN ${default}] ${commandaction} ${servicename}: ${functionfile}"
-	else
-		echo -en "${creeol}[${yellow} WARN ${default}] ${functionfile}"
-	fi
-}
-
-fn_print_warn_fn_nl(){
-	if [ -n "${commandaction}" ]; then
-		echo -en "${creeol}[${yellow} WARN ${default}] ${commandaction} ${servicename}: ${functionfile}"
-	else
-		echo -en "${creeol}[${yellow} WARN ${default}] ${functionfile}"
-	fi
-	sleep 0.5
-	echo -en "\n"
-}
-
-# Update
-fn_print_update_fn(){
-	if [ -n "${commandaction}" ]; then
-		echo -en "${creeol}[${yellow} UPDATE ${default}] ${commandaction} ${servicename}: ${functionfile}"
-	else
-		echo -en "${creeol}[${yellow} UPDATE ${default}] ${functionfile}"
-	fi
-}
-
-fn_print_update_fn_nl(){
-	if [ -n "${commandaction}" ]; then
-		echo -en "${creeol}[${yellow} UPDATE ${default}] ${commandaction} ${servicename}: ${functionfile}"
-	else
-		echo -en "${creeol}[${yellow} UPDATE ${default}] ${functionfile}"
-	fi
-	sleep 0.5
-	echo -en "\n"
-}
-
 # [ INFO ]
 fn_print_info(){
 	if [ -n "${commandaction}" ]; then
@@ -316,24 +207,6 @@ fn_print_info_nl(){
 		echo -en "${creeol}[${cyan} INFO ${default}] ${commandaction} ${servicename}: $@"
 	else
 		echo -en "${creeol}[${cyan} INFO ${default}] $@"
-	fi
-	sleep 0.5
-	echo -en "\n"
-}
-
-fn_print_info_fn(){
-	if [ -n "${commandaction}" ]; then
-		echo -en "${creeol}[${cyan} INFO ${default}] ${commandaction} ${servicename}: ${functionfile}"
-	else
-		echo -en "${creeol}[${cyan} INFO ${default}] ${functionfile}"
-	fi
-}
-
-fn_print_info_fn_nl(){
-	if [ -n "${commandaction}" ]; then
-		echo -en "${creeol}[${cyan} INFO ${default}] ${commandaction} ${servicename}: ${functionfile}"
-	else
-		echo -en "${creeol}[${cyan} INFO ${default}] ${functionfile}"
 	fi
 	sleep 0.5
 	echo -en "\n"

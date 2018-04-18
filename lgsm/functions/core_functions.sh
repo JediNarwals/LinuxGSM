@@ -1,7 +1,7 @@
 #!/bin/bash
 # LinuxGSM core_functions.sh function
 # Author: Daniel Gibbs
-# Website: https://gameservermanagers.com
+# Website: https://linuxgsm.com
 # Description: Defines all functions to allow download and execution of functions using fn_fetch_function.
 # This function is called first before any other function. Without this file other functions will not load.
 
@@ -269,6 +269,11 @@ functionfile="${FUNCNAME}"
 fn_fetch_function
 }
 
+command_dev_query_raw.sh(){
+functionfile="${FUNCNAME}"
+fn_fetch_function
+}
+
 # Fix
 
 fix.sh(){
@@ -306,12 +311,23 @@ functionfile="${FUNCNAME}"
 fn_fetch_function
 }
 
-fix_steamcmd.sh(){
+fix_glibc.sh(){
 functionfile="${FUNCNAME}"
 fn_fetch_function
 }
 
-fix_glibc.sh(){
+
+fix_kf.sh(){
+functionfile="${FUNCNAME}"
+fn_fetch_function
+}
+
+fix_kf2.sh(){
+functionfile="${FUNCNAME}"
+fn_fetch_function
+}
+
+fix_mta.sh(){
 functionfile="${FUNCNAME}"
 fn_fetch_function
 }
@@ -321,12 +337,27 @@ functionfile="${FUNCNAME}"
 fn_fetch_function
 }
 
-fix_kf.sh(){
+fix_rust.sh(){
 functionfile="${FUNCNAME}"
 fn_fetch_function
 }
 
-fix_kf2.sh(){
+fix_rw.sh(){
+functionfile="${FUNCNAME}"
+fn_fetch_function
+}
+
+fix_steamcmd.sh(){
+functionfile="${FUNCNAME}"
+fn_fetch_function
+}
+
+fix_ut3.sh(){
+functionfile="${FUNCNAME}"
+fn_fetch_function
+}
+
+fix_rust.sh(){
 functionfile="${FUNCNAME}"
 fn_fetch_function
 }
@@ -341,16 +372,6 @@ functionfile="${FUNCNAME}"
 fn_fetch_function
 }
 
-fix_rust.sh(){
-functionfile="${FUNCNAME}"
-fn_fetch_function
-}
-
-fix_mta.sh(){
-functionfile="${FUNCNAME}"
-fn_fetch_function
-}
-
 # Info
 
 info_config.sh(){
@@ -359,6 +380,11 @@ fn_fetch_function
 }
 
 info_distro.sh(){
+functionfile="${FUNCNAME}"
+fn_fetch_function
+}
+
+info_gamedig.sh(){
 functionfile="${FUNCNAME}"
 fn_fetch_function
 }
@@ -426,9 +452,9 @@ functionfile="${FUNCNAME}"
 fn_fetch_function
 }
 
-# Monitor
+# Query
 
-monitor_gsquery.sh(){
+query_gamedig.sh(){
 functionfile="${FUNCNAME}"
 fn_fetch_function
 }
@@ -448,11 +474,6 @@ fn_fetch_function
 command_update.sh(){
 functionfile="${FUNCNAME}"
 fn_fetch_function
-}
-
-updateserver.sh(){
-functionfile="${FUNCNAME}"
-fn_fetch_function	
 }
 
 update_ts3.sh(){
@@ -481,11 +502,6 @@ fn_fetch_function
 }
 
 update_steamcmd.sh(){
-functionfile="${FUNCNAME}"
-fn_fetch_function
-}
-
-updateserver.sh(){
 functionfile="${FUNCNAME}"
 fn_fetch_function
 }
