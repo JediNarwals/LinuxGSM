@@ -48,7 +48,7 @@ fn_alert_restart(){
 
 fn_alert_restart_query(){
 	fn_script_log_info "Sending alert: Restarted: ${gsquerycmd} not running"
-	alertsubject="Alert - ${servername} - Restarted"
+	alertsubject="Alert - ${servername} - Restarting"
 	alertemoji="🚨"
 	alertsound="2"
 	alerturl="not enabled"
