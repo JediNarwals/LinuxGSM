@@ -35,7 +35,7 @@ json=$(cat <<EOF
 			},
 			{
 				"name": "Server IP",
-				"value": "[${getip}:${port}](https://www.gametracker.com/server_info/${ip}:${port})"
+				"value": "[${ip}:${port}](https://www.gametracker.com/server_info/${ip}:${port})"
 			}
 		]
 	}]
