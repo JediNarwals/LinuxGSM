@@ -325,7 +325,7 @@ else
 	## SERVER.CFG ##
 	if [ ! -f "${configdirdefault}/config-game/server.cfg" ]; then
 	  mkdir -p "${configdirdefault}/config-game"
-	  fn_fetch_config "lgsm/config-default/config-game" "server.cfg" "${configdirdefault}/config-game" "server.cfg" "nochmodx" "norun" "noforcedl" "nomd5"
+	  fn_fetch_config "Game-Server-Configs-master/${shortname}" "server.cfg" "${configdirdefault}/config-game" "server.cfg" "nochmodx" "norun" "noforcedl" "nomd5"
 	fi
 	if [ ! -f "${configdirserver}/${gameservername}.server.cfg" ]; then
 	  mkdir -p "${configdirserver}"
