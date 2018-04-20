@@ -22,10 +22,10 @@ fn_fetch_default_config(){
 	echo ""
 	echo "Downloading ${gamename} Configs"
 	echo "================================="
-	echo "default configs from https://github.com/GameServerManagers/Game-Server-Configs"
+	echo "default configs from https://github.com/${githubuser}/Game-Server-Configs"
 	sleep 1
 	mkdir -p "${lgsmdir}/config-default/config-game"
-	githuburl="https://raw.githubusercontent.com/GameServerManagers/Game-Server-Configs/master"
+	githuburl="https://raw.githubusercontent.com/${githubuser}/Game-Server-Configs/${githubbranch}"
 	for config in "${array_configs[@]}"; do
 		fn_fetch_file "${githuburl}/${gamedirname}/${config}" "${lgsmdir}/config-default/config-game" "${config}" "nochmodx" "norun" "noforce" "nomd5"
 	done
