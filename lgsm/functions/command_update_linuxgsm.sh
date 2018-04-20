@@ -34,8 +34,7 @@ if [ -z "${legacymode}" ];then
 		fn_print_update_eol_nl
 		fn_script_log_info "checking config ${gameservername}.server.cfg: UPDATE"
 		rm -f "${configdirdefault}/config-game/server.cfg"
-		fn_fetch_config "lgsm/config-default/config-game" "server.cfg"
-		"${configdirdefault}/config-game" "server.cfg" "nochmodx" "norun" "noforce" "nomd5"
+		fn_fetch_config "Game-Server-Configs-master/${shortname}" "server.cfg" "${configdirdefault}/config-game" "server.cfg" "nochmodx" "norun" "noforcedl" "nomd5"
 	else
 		fn_print_ok_eol_nl
 		fn_script_log_info "checking config ${gameservername}.server.cfg: OK"
