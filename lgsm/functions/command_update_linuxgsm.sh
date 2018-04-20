@@ -29,7 +29,7 @@ if [ -z "${legacymode}" ];then
 	fi
 
 	echo -ne "    checking config ${gameservername}.server.cfg...\c"
-	serv_config_file_diff=$(diff "${configdirdefault}/config-game/server.cfg" <(${curlpath} -s "https://raw.githubusercontent.com/${githubuser}/${githubrepo}/${githubbranch}/Game-Server-Configs-master/${gamedirname}/server.cfg"))
+	serv_config_file_diff=$(diff "${configdirdefault}/config-game/server.cfg" <(${curlpath} -s "https://raw.githubusercontent.com/${githubuser}/${githubrepo}/${githubbranch}/Game-Server-Configs-master/${shortname}/server.cfg"))
 	if [ "${serv_config_file_diff}" != "" ]; then
 		fn_print_update_eol_nl
 		fn_script_log_info "checking config ${gameservername}.server.cfg: UPDATE"
