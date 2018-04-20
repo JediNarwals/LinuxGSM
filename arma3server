@@ -21,7 +21,7 @@ if [ -f ".dev-debug" ]; then
 fi
 
 version="170803"
-shortname="﻿arma3"
+shortname="Arma3"
 gameservername="arma3server"
 rootdir="$(dirname $(readlink -f "${BASH_SOURCE[0]}"))"
 selfname="$(basename $(readlink -f "${BASH_SOURCE[0]}"))"
