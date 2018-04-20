@@ -405,6 +405,11 @@ echo "###################################"
 echo "###################################"
 echo ""
 
+#Linux function updater
+exitbypass=1
+command_update_linuxgsm.sh
+
+#Alerts
 alert="update"
 alert.sh
 
