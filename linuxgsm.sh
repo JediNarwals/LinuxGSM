@@ -21,7 +21,7 @@ if [ -f ".dev-debug" ]; then
 fi
 
 version="170803"
-shortname="﻿arma3"
+shortname="Arma3"
 gameservername="arma3server"
 rootdir="$(dirname $(readlink -f "${BASH_SOURCE[0]}"))"
 selfname="$(basename $(readlink -f "${BASH_SOURCE[0]}"))"
@@ -323,38 +323,38 @@ else
 	# Load the default config. If missing download it. If changed reload it.
 
 	## SERVER.CFG ##
-	if [ ! -f "${configdirdefault}/config-game/server.cfg" ]; then
-	  mkdir -p "${configdirdefault}/config-game"
-	  fn_fetch_config "lgsm/config-default/config-game" "server.cfg" "${configdirdefault}/config-game" "server.cfg" "nochmodx" "norun" "noforcedl" "nomd5"
-	fi
-	if [ ! -f "${configdirserver}/${gameservername}.server.cfg" ]; then
-	  mkdir -p "${configdirserver}"
-	  echo -ne "    copying ${gameservername}.server.cfg...\c"
-	  cp -R "${configdirdefault}/config-game/server.cfg" "${configdirserver}/${gameservername}.server.cfg"
-	  exitcode=$?
-	  if [ ${exitcode} -ne 0 ]; then
-	    echo -e "\e[0;31mFAIL\e[0m\n"
-	    exit 1
-	  else
-	    echo -e "\e[0;32mOK\e[0m"
-	  fi
-	else
-	  serv_function_file_diff=$(diff -q ${configdirdefault}/config-game/server.cfg ${configdirserver}/${gameservername}.server.cfg)
-	  if [ "${serv_function_file_diff}" != "" ]; then
-	    fn_print_warn_nl "${gameservername}.server.cfg has been altered. reloading config."
-	    echo -ne "    copying ${gameservername}.server.cfg...\c"
-	    cp -R "${configdirdefault}/config-game/server.cfg" "${configdirserver}/${gameservername}.server.cfg"
-	    cp -R "${configdirserver}/${gameservername}.server.cfg ${serverfiles}/cfg/${gameservername}.server.cfg"
-	    exitcode=$?
-	    if [ ${exitcode} -ne 0 ]; then
-	      echo -e "\e[0;31mFAIL\e[0m\n"
-	      exit 1
-	    else
-	      echo -e "\e[0;32mOK\e[0m"
-	    fi
-	  fi
-	fi
-	source "${configdirserver}/${gameservername}.server.cfg"
+#	if [ ! -f "${configdirdefault}/config-game/server.cfg" ]; then
+#	  mkdir -p "${configdirdefault}/config-game"
+#	  fn_fetch_config "Game-Server-Configs-master/${shortname}" "server.cfg" "${configdirdefault}/config-game" "server.cfg" "nochmodx" "norun" "noforcedl" "nomd5"
+#	fi
+#	if [ ! -f "${configdirserver}/${gameservername}.server.cfg" ]; then
+#	  mkdir -p "${configdirserver}"
+#	  echo -ne "    copying ${gameservername}.server.cfg...\c"
+#	  cp -R "${configdirdefault}/config-game/server.cfg" "${configdirserver}/${gameservername}.server.cfg"
+#	  exitcode=$?
+#	  if [ ${exitcode} -ne 0 ]; then
+#	    echo -e "\e[0;31mFAIL\e[0m\n"
+#	    exit 1
+#	  else
+#	    echo -e "\e[0;32mOK\e[0m"
+#	  fi
+#	else
+#	  serv_function_file_diff=$(diff -q ${configdirdefault}/config-game/server.cfg ${configdirserver}/${gameservername}.server.cfg)
+#	  if [ "${serv_function_file_diff}" != "" ]; then
+#	    fn_print_warn_nl "${gameservername}.server.cfg has been altered. reloading config."
+#	    echo -ne "    copying ${gameservername}.server.cfg...\c"
+#	    cp -R "${configdirdefault}/config-game/server.cfg" "${configdirserver}/${gameservername}.server.cfg"
+#	    cp -R "${configdirserver}/${gameservername}.server.cfg ${serverfiles}/cfg/${gameservername}.server.cfg"
+#	    exitcode=$?
+#	    if [ ${exitcode} -ne 0 ]; then
+#	      echo -e "\e[0;31mFAIL\e[0m\n"
+#	      exit 1
+#	    else
+#	      echo -e "\e[0;32mOK\e[0m"
+#	    fi
+#	  fi
+#	fi
+#	source "${configdirserver}/${gameservername}.server.cfg"
 
 	## _default.cfg
 	if [ ! -f "${configdirdefault}/config-lgsm/${gameservername}/_default.cfg" ]; then
