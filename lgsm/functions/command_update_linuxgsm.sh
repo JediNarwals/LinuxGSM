@@ -28,6 +28,19 @@ if [ -z "${legacymode}" ];then
 		fn_script_log_info "checking config _default.cfg: OK"
 	fi
 
+	echo -ne "    checking config ${gameservername}.server.cfg...\c"
+	serv_config_file_diff=$(diff "${configdirdefault}/config-game/server.cfg" <(${curlpath} -s "https://raw.githubusercontent.com/${githubuser}/${githubrepo}/${githubbranch}/Game-Server-Configs-master/${gamedirname}/server.cfg"))
+	if [ "${serv_config_file_diff}" != "" ]; then
+		fn_print_update_eol_nl
+		fn_script_log_info "checking config ${gameservername}.server.cfg: UPDATE"
+		rm -f "${configdirdefault}/config-game/server.cfg"
+		fn_fetch_config "lgsm/config-default/config-game" "server.cfg"
+		"${configdirdefault}/config-game" "server.cfg" "nochmodx" "norun" "noforce" "nomd5"
+	else
+		fn_print_ok_eol_nl
+		fn_script_log_info "checking config ${gameservername}.server.cfg: OK"
+	fi
+
 	fn_print_dots "linuxgsm.sh..."
 	tmp_script_diff=$(diff "${tmpdir}/linuxgsm.sh" <(${curlpath} -s "https://raw.githubusercontent.com/${githubuser}/${githubrepo}/${githubbranch}/linuxgsm.sh"))
 	if [ "${tmp_script_diff}" != "" ]; then
