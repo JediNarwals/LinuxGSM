@@ -22,7 +22,7 @@ fi
 
 version="180409"
 shortname="rust"
-gameservername="rust"
+gameservername="rustserver"
 rootdir="$(dirname "$(readlink -f "${BASH_SOURCE[0]}")")"
 selfname="$(basename "$(readlink -f "${BASH_SOURCE[0]}")")"
 servicename="${selfname}"
