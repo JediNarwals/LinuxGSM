@@ -1,7 +1,7 @@
 #!/bin/bash
 # LinuxGSM alert.sh function
 # Author: Daniel Gibbs
-# Website: https://gameservermanagers.com
+# Website: https://linuxgsm.com
 # Description: Overall function for managing alerts.
 
 local commandname="ALERT"
@@ -28,72 +28,56 @@ fn_alert_log(){
 
 fn_alert_test(){
 	fn_script_log_info "Sending test alert"
-	alertsubject="Alert - ${servername} - Test"
+	alertsubject="Alert - ${servicename} - Test"
 	alertemoji="🚧"
 	alertsound="1"
 	alerturl="not enabled"
 	alertbody="Testing LinuxGSM Alert. No action to be taken."
-	alertcolor="12745742"
 }
 
 fn_alert_restart(){
-	fn_script_log_info "Sending alert: Restarted: ${executable} was restarted"
-	alertsubject="Alert - ${servername} - Restarted"
-	alertemoji="❗"
+	fn_script_log_info "Sending alert: Restarted: ${executable} not running"
+	alertsubject="Alert - ${servicename} - Restarted"
+	alertemoji="🚨"
 	alertsound="2"
 	alerturl="not enabled"
-	alertbody="${servicename} was restarted"
-	alertcolor="11027200"
+	alertbody="${servicename} ${executable} not running"
 }
 
 fn_alert_restart_query(){
-	fn_script_log_info "Sending alert: Restarted: ${gsquerycmd} not running"
-	alertsubject="Alert - ${servername} - Restarted"
+	fn_script_log_info "Sending alert: Restarted: ${servicename}"
+	alertsubject="Alert - ${servicename} - Restarted"
 	alertemoji="🚨"
 	alertsound="2"
 	alerturl="not enabled"
-	alertbody="gsquery.py failed to query: ${gsquerycmd}"
-	alertcolor="10038562"
-}
-
-fn_alert_stop(){
-	fn_script_log_info "Sending alert: Stopped: ${executable} was stopped"
-	alertsubject="Alert - ${servername} - Stopped"
-	alertemoji="🚨"
-	alertsound="2"
-	alerturl="not enabled"
-	alertbody="${servicename} was stopped"
-	alertcolor="10038562"
-}
-
-fn_alert_start(){
-	fn_script_log_info "Sending alert: started: ${executable} was started"
-	alertsubject="Alert - ${servername} - started"
-	alertemoji="❗"
-	alertsound="1"
-	alerturl="not enabled"
-	alertbody="${servicename} was started"
-	alertcolor="2067276"
+	alertbody="Unable to query: ${servicename}"
 }
 
 fn_alert_update(){
 	fn_script_log_info "Sending alert: Updated"
-	alertsubject="Alert - ${servername} - Updated"
+	alertsubject="Alert - ${servicename} - Updated"
 	alertemoji="🎮"
 	alertsound="1"
 	alerturl="not enabled"
-	alertbody="${gamename} received an update"
-	alertcolor="11027200"
+	alertbody="${gamename} received update"
 }
 
 fn_alert_permissions(){
 	fn_script_log_info "Sending alert: Permissions error"
-	alertsubject="Alert - ${servername}: Permissions error"
+	alertsubject="Alert - ${servicename}: Permissions error"
 	alertemoji="❗"
 	alertsound="2"
 	alerturl="not enabled"
 	alertbody="${servicename} has permissions issues"
-	alertcolor="10038562"
+}
+
+fn_alert_config(){
+	fn_script_log_info "Sending alert: New _default.cfg"
+	alertsubject="Alert - ${servicename} - New _default.cfg"
+	alertemoji="🎮"
+	alertsound="1"
+	alerturl="not enabled"
+	alertbody="${servicename} has recieved a new _default.cfg. Check file for changes."
 }
 
 if [ "${alert}" == "permissions" ]; then
@@ -102,14 +86,12 @@ elif [ "${alert}" == "restart" ]; then
 	fn_alert_restart
 elif [ "${alert}" == "restartquery" ]; then
 	fn_alert_restart_query
-elif [ "${alert}" == "stop" ]; then
-	fn_alert_stop
-elif [ "${alert}" == "start" ]; then
-	fn_alert_start
 elif [ "${alert}" == "test" ]; then
 	fn_alert_test
 elif [ "${alert}" == "update" ]; then
 	fn_alert_update
+elif [ "${alert}" == "config" ]; then
+	fn_alert_config
 fi
 
 # Generate alert log

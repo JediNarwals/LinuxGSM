@@ -1,7 +1,7 @@
 #!/bin/bash
 # LinuxGSM command_update.sh function
 # Author: Daniel Gibbs
-# Website: https://gameservermanagers.com
+# Website: https://linuxgsm.com
 # Description: Handles updating of servers.
 
 local commandname="UPDATE"
@@ -23,8 +23,6 @@ elif [ "${gamename}" == "Factorio" ]; then
 	update_factorio.sh
 elif [ "${gamename}" == "Multi Theft Auto" ]; then
 	update_mta.sh
-elif [ "${gamename}" == "ARMA 3" ]; then
-	updateserver.sh
 else
 	update_steamcmd.sh
 fi
