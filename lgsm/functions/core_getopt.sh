@@ -120,7 +120,7 @@ if [ "${gamename}" == "Squad" ]; then
 fi
 
 ## Mods commands
-if [ "${engine}" == "source" ]||[ "${gamename}" == "Rust" ]||[ "${gamename}" == "Hurtworld" ]||[ "${gamename}" == "7 Days To Die" ]; then
+if [ "${engine}" == "source" ]||[ "${gamename}" == "Rust" ]||[ "${gamename}" == "Hurtworld" ]||[ "${gamename}" == "7 Days To Die" ]||[ "${gamename}" == "Arma 3" ]; then
 	currentopt+=( "${cmd_mods_install[@]}" "${cmd_mods_remove[@]}" "${cmd_mods_update[@]}" )
 fi
 
