@@ -345,8 +345,8 @@ DIR_MOD="$2"
 		rm -r ~/serverfiles/$2/
 		cp -aru $DIR_MOD/steamapps/workshop/content/107410/$MOD/. ~/serverfiles/$2/
 		convmv --lower -r --replace --notest ~/serverfiles/$2/
-		cp -au ~/serverfiles/$2/keys/. ~/serverfiles/keys/
-		cp -au ~/serverfiles/$2/key/. ~/serverfiles/keys/
+		#cp -au ~/serverfiles/$2/keys/. ~/serverfiles/keys/
+		#cp -au ~/serverfiles/$2/key/. ~/serverfiles/keys/
 		ShouldRun=1
     exitcode=$?
     if [ ${exitcode} -ne 0 ]; then
