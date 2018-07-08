@@ -64,5 +64,5 @@ If you want to donate to the project you can via PayPal. I have had a may kind p
 	<li><a href="https://twitter.com/dangibbsuk">Twitter</a></li>
 	<li><a href="https://www.facebook.com/linuxgsm">Facebook</a></li>
 	<li><a href="https://plus.google.com/+Gameservermanagers1">Google+</a></li>
-	<li><a href="https://www.tactical-gaming/hq">Tactical Gaming</a></li>
+	<li><a href="https://www.tacticalgaming/hq">Tactical Gaming</a></li>
 <ul>
