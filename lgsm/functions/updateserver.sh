@@ -219,7 +219,7 @@ add_game(){
 	GAME="$1"
 	DIR="$2"
 	NAME="$3"
-	cd ${rootdir}/DEV
+	cd ${rootdir}
 	if [ ! -z "$GAME" ]; then
 		if [ -z "$DIR" ]; then
 			DIR=~/$DIR
