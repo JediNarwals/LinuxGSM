@@ -227,7 +227,7 @@ add_game(){
 		if [ -z "$DIR" ]; then
 			DIR=~/$DIR/DEV
 		else
-			DIR=$BASE_DIR/$DIR
+			DIR=$BASE_DIR/$DIR/$INSTALL_DIR
 		fi
 		OK=0
 		if [ ! -d "$DIR" ]; then
