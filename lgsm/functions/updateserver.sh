@@ -15,6 +15,9 @@ check.sh
 #Don't add a trailing /
 INSTALL_DIR=serverfiles
 
+#This is to help a multi level install
+HOME_DIR=home/tacticalgaming
+
 #The location of the SteamCMD, relative to this script (default: bin). Don't add a trailing /
 STEAM_DIR=steamcmd
 
@@ -222,11 +225,10 @@ add_game(){
 	cd ${rootdir}
 	if [ ! -z "$GAME" ]; then
 		if [ -z "$DIR" ]; then
-			DIR=~/$DIR
+			DIR=$DIR
 		else
-			DIR=~/$BASE_DIR/$DIR
+			DIR=$BASE_DIR/$DIR
 		fi
-
 		OK=0
 		if [ ! -d "$DIR" ]; then
 			echo -e "[ \e[0;91;43m$3\e[0m ] Creating directory $DIR..."
@@ -266,7 +268,7 @@ add_mod(){
 			fi
 		fi
 		if [ "$OK" == "0" ]; then
-			CmdArgs="$CmdArgs +force_install_dir \"$DIR\" +workshop_download_item 107410 $MOD validate"
+			CmdArgs="$CmdArgs +force_install_dir \"$HOME_DIR\" +workshop_download_item 107410 $MOD validate"
 			ShouldRun=1
       exitcode=$?
       if [ ${exitcode} -ne 0 ]; then
