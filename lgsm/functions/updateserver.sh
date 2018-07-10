@@ -268,7 +268,7 @@ add_mod(){
 			fi
 		fi
 		if [ "$OK" == "0" ]; then
-			CmdArgs="$CmdArgs +force_install_dir $DIR +workshop_download_item 107410 $MOD validate"
+			CmdArgs="$CmdArgs +force_install_dir \"$DIR\" +workshop_download_item 107410 $MOD validate"
 			ShouldRun=1
       exitcode=$?
       if [ ${exitcode} -ne 0 ]; then
