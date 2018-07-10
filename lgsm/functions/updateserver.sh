@@ -168,8 +168,8 @@ exitbypass=1
 command_stop.sh
 
 #Linux function updater
-#exitbypass=1
-#command_update_linuxgsm.sh
+exitbypass=1
+command_update_linuxgsm.sh
 #cd ${rootdir}
 
 #Get the current directory (snippet from SourceCMD's sourcecmd.sh)
