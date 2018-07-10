@@ -257,7 +257,7 @@ add_mod(){
 		if [ -z "$DIR" ]; then
 			DIR=$2
 		else
-			DIR=$HOME_DIR/$DIR
+			DIR=$HOME_DIR/MODS/$DIR
 		fi
 
 		OK=0
