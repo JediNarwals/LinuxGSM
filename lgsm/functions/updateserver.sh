@@ -341,7 +341,7 @@ DIR_MOD="$2"
 	if [ -z "$DIR_MOD" ]; then
 		DIR_MOD=$INSTALL_DIR
 	else
-		DIR_MOD=$HOME_DIR/$DIR_MOD
+		DIR_MOD=$HOME_DIR/MODS/$DIR_MOD
 	fi
 
 	OK=0
