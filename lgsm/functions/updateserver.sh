@@ -16,7 +16,7 @@ check.sh
 INSTALL_DIR=serverfiles
 
 #This is to help a multi level install
-HOME_DIR=home/tacticalgaming
+HOME_DIR=/home/tacticalgaming
 
 #The location of the SteamCMD, relative to this script (default: bin). Don't add a trailing /
 STEAM_DIR=steamcmd
