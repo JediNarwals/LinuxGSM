@@ -225,9 +225,9 @@ add_game(){
 	cd ${rootdir}
 	if [ ! -z "$GAME" ]; then
 		if [ -z "$DIR" ]; then
-			DIR=$HOME_DIR/$INSTALL_DIR
+			DIR=$INSTALL_DIR
 		else
-			DIR=$BASE_DIR/$INSTALL_DIR
+			DIR=$INSTALL_DIR
 		fi
 		OK=0
 		if [ ! -d "$DIR" ]; then
@@ -252,10 +252,10 @@ add_game "$DL_SV0" "$DL_DIR0" "$DL_GNM0"
 add_mod(){
 	MOD="$1"
 	DIR="$2"
-	cd $BASE_DIR
+	cd ${rootdir}
 	if [ ! -z "$MOD" ]; then
 		if [ -z "$DIR" ]; then
-			DIR=$INSTALL_DIR
+			DIR=$2
 		else
 			DIR=$BASE_DIR/$DIR
 		fi
