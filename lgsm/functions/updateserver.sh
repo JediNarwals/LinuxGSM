@@ -15,6 +15,9 @@ check.sh
 #Don't add a trailing /
 INSTALL_DIR=serverfiles
 
+#This is to help a multi level install
+HOME_DIR=/home/tacticalgaming
+
 #The location of the SteamCMD, relative to this script (default: bin). Don't add a trailing /
 STEAM_DIR=steamcmd
 
@@ -127,8 +130,8 @@ DL_MD24=
 DL_NM25="@cba_a3"
 DL_MD25=450814997
 
-DL_NM26="@ifa3"
-DL_MD26=660460283
+DL_NM26=
+DL_MD26=
 
 DL_NM27="@lythium"
 DL_MD27=909547724
@@ -164,8 +167,14 @@ echo ""
 exitbypass=1
 command_stop.sh
 
+#Linux function updater
+exitbypass=1
+command_update_linuxgsm.sh
+cd $HOME/DEV
+
 #Get the current directory (snippet from SourceCMD's sourcecmd.sh)
 BASE_DIR="$(cd "${0%/*}" && echo $PWD)"
+cd $BASE_DIR
 
 #Relocate downloads to absolute url
 INSTALL_DIR=$BASE_DIR/$INSTALL_DIR
@@ -213,13 +222,13 @@ add_game(){
 	GAME="$1"
 	DIR="$2"
 	NAME="$3"
+	cd ${rootdir}
 	if [ ! -z "$GAME" ]; then
 		if [ -z "$DIR" ]; then
 			DIR=$INSTALL_DIR
 		else
-			DIR=$BASE_DIR/$DIR
+			DIR=$INSTALL_DIR
 		fi
-
 		OK=0
 		if [ ! -d "$DIR" ]; then
 			echo -e "[ \e[0;91;43m$3\e[0m ] Creating directory $DIR..."
@@ -243,11 +252,12 @@ add_game "$DL_SV0" "$DL_DIR0" "$DL_GNM0"
 add_mod(){
 	MOD="$1"
 	DIR="$2"
+	cd ${rootdir}
 	if [ ! -z "$MOD" ]; then
 		if [ -z "$DIR" ]; then
-			DIR=$INSTALL_DIR
+			DIR=$2
 		else
-			DIR=$BASE_DIR/$DIR
+			DIR=$HOME_DIR/MODS/$DIR
 		fi
 
 		OK=0
@@ -269,6 +279,7 @@ add_mod(){
       fi
 		fi
 	fi
+	cd ${rootdir}
 }
 
 add_mod "$DL_MD0" "$DL_NM0"
@@ -330,7 +341,7 @@ DIR_MOD="$2"
 	if [ -z "$DIR_MOD" ]; then
 		DIR_MOD=$INSTALL_DIR
 	else
-		DIR_MOD=$BASE_DIR/$DIR_MOD
+		DIR_MOD=$HOME_DIR/MODS/$DIR_MOD
 	fi
 
 	OK=0
@@ -343,10 +354,10 @@ DIR_MOD="$2"
 	fi
 	if [ "$OK" == "0" ]; then
 		rm -r ~/serverfiles/$2/
-		cp -aru $DIR_MOD/steamapps/workshop/content/107410/$MOD/. ~/serverfiles/$2/
-		convmv --lower -r --replace --notest ~/serverfiles/$2/
-		cp -au ~/serverfiles/$2/keys/. ~/serverfiles/keys/
-		cp -au ~/serverfiles/$2/key/. ~/serverfiles/keys/
+		cp -aru $DIR_MOD/steamapps/workshop/content/107410/$MOD/. ~/DEV/serverfiles/$2/
+		convmv --lower -r --replace --notest ~/DEV/serverfiles/$2/
+		cp -au ~/DEV/serverfiles/$2/keys/. ~/DEV/serverfiles/keys/
+		cp -au ~/DEV/serverfiles/$2/key/. ~/DEV/serverfiles/keys/
 		ShouldRun=1
     exitcode=$?
     if [ ${exitcode} -ne 0 ]; then
@@ -404,10 +415,6 @@ echo "###         JediNarwals         ###"
 echo "###################################"
 echo "###################################"
 echo ""
-
-#Linux function updater
-exitbypass=1
-command_update_linuxgsm.sh
 
 #Alerts
 alert="update"
