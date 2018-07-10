@@ -20,7 +20,7 @@ STEAM_DIR=steamcmd
 
 #Ids of the servers you want to install, leave empty to skip
 #First item is the directory, second item is the AppID. Directory is relative to script directory
-DL_DIR0=DEV
+DL_DIR0=
 DL_SV0=233780
 DL_GNM0="Arma 3"
 
