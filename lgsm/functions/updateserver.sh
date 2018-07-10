@@ -167,7 +167,7 @@ command_stop.sh
 #Linux function updater
 exitbypass=1
 command_update_linuxgsm.sh
-
+cd ${rootdir}
 
 #Get the current directory (snippet from SourceCMD's sourcecmd.sh)
 BASE_DIR="$(cd "${0%/*}" && echo $PWD)"
