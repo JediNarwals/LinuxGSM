@@ -225,7 +225,7 @@ add_game(){
 	cd ${rootdir}
 	if [ ! -z "$GAME" ]; then
 		if [ -z "$DIR" ]; then
-			DIR=~/$DIR/DEV
+			DIR=~/$DIR/DEV/$INSTALL_DIR
 		else
 			DIR=$BASE_DIR/$DIR/$INSTALL_DIR
 		fi
@@ -341,7 +341,7 @@ DIR_MOD="$2"
 	if [ -z "$DIR_MOD" ]; then
 		DIR_MOD=$INSTALL_DIR
 	else
-		DIR_MOD=$BASE_DIR/$DIR_MOD
+		DIR_MOD=$HOME_DIR/$DIR_MOD
 	fi
 
 	OK=0
@@ -354,7 +354,7 @@ DIR_MOD="$2"
 	fi
 	if [ "$OK" == "0" ]; then
 		rm -r ~/serverfiles/$2/
-		cp -aru ~/$2/steamapps/workshop/content/107410/$MOD/. ~/DEV/serverfiles/$2/
+		cp -aru ~/$DIR_MOD/steamapps/workshop/content/107410/$MOD/. ~/DEV/serverfiles/$2/
 		convmv --lower -r --replace --notest ~/DEV/serverfiles/$2/
 		cp -au ~/DEV/serverfiles/$2/keys/. ~/DEV/serverfiles/keys/
 		cp -au ~/DEV/serverfiles/$2/key/. ~/DEV/serverfiles/keys/
