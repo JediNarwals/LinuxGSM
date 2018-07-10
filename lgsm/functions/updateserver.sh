@@ -174,7 +174,7 @@ cd $BASE_DIR
 #Linux function updater
 exitbypass=1
 command_update_linuxgsm.sh
-cd $HOME/PRIVATE
+cd ~/PRIVATE
 
 #Relocate downloads to absolute url
 INSTALL_DIR=$BASE_DIR/$INSTALL_DIR
