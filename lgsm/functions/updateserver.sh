@@ -168,8 +168,10 @@ command_stop.sh
 exitbypass=1
 command_update_linuxgsm.sh
 
+
 #Get the current directory (snippet from SourceCMD's sourcecmd.sh)
 BASE_DIR="$(cd "${0%/*}" && echo $PWD)"
+cd $BASE_DIR
 
 #Relocate downloads to absolute url
 INSTALL_DIR=$BASE_DIR/$INSTALL_DIR
