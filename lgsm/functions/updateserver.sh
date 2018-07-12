@@ -167,14 +167,14 @@ echo ""
 exitbypass=1
 command_stop.sh
 
+#Get the current directory (snippet from SourceCMD's sourcecmd.sh)
+BASE_DIR="$(cd "${0%/*}" && echo $PWD)"
+cd $BASE_DIR
+
 #Linux function updater
 exitbypass=1
 command_update_linuxgsm.sh
 cd $HOME/PUBLIC
-
-#Get the current directory (snippet from SourceCMD's sourcecmd.sh)
-BASE_DIR="$(cd "${0%/*}" && echo $PWD)"
-cd $BASE_DIR
 
 #Relocate downloads to absolute url
 INSTALL_DIR=$BASE_DIR/$INSTALL_DIR
