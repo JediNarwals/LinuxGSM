@@ -353,7 +353,7 @@ DIR_MOD="$2"
 		fi
 	fi
 	if [ "$OK" == "0" ]; then
-		rm -r ~/serverfiles/$2/
+		rm -r ~/PRIVATE/serverfiles/$2/
 		cp -aru $DIR_MOD/steamapps/workshop/content/107410/$MOD/. ~/PRIVATE/serverfiles/$2/
 		convmv --lower -r --replace --notest ~/PRIVATE/serverfiles/$2/
 		cp -au ~/PRIVATE/serverfiles/$2/keys/. ~/PRIVATE/serverfiles/keys/
