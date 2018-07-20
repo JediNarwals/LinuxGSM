@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 local commandname="UPDATE"
 local commandaction="Update"
